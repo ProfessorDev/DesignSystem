@@ -369,6 +369,25 @@ export const FullWidth = () => {
     )
 };
 
+export const withIcons = () => {
+    return (
+        <>
+            <PaddingWrap>
+                <Button>
+                    <i className="fas fa-file-alt"/> file
+                </Button>
+            </PaddingWrap>
+            <PaddingWrap>
+                <Button theme={{
+                    buttonStyle: "outline",
+                }}>
+                    <i className="fas fa-file-alt"/> file
+                </Button>
+            </PaddingWrap>
+        </>
+    )
+};
+
 export const Knobs = () => {
     return (
         <Button onClick={action('button clicked')} theme={{
