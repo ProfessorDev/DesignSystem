@@ -1,6 +1,6 @@
 import React from 'react';
 import {action} from '@storybook/addon-actions';
-import {withKnobs, text, select, number} from '@storybook/addon-knobs/react';
+import {withKnobs, text, select, number, boolean} from '@storybook/addon-knobs/react';
 
 import Button from './';
 
@@ -177,63 +177,63 @@ export const ColorWeights = () => {
         <>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 100
+                    colorVariant: 100
                 }}>
                     100
                 </Button>
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 200
+                    colorVariant: 200
                 }}>
                     200
                 </Button>
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 300
+                    colorVariant: 300
                 }}>
                     300
                 </Button>
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 400
+                    colorVariant: 400
                 }}>
                     400
                 </Button>
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 500
+                    colorVariant: 500
                 }}>
                     500
                 </Button>
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 600
+                    colorVariant: 600
                 }}>
                     600
                 </Button>
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 700
+                    colorVariant: 700
                 }}>
                     700
                 </Button>
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 800
+                    colorVariant: 800
                 }}>
                     800
                 </Button>
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 900
+                    colorVariant: 900
                 }}>
                     900
                 </Button>
@@ -241,7 +241,7 @@ export const ColorWeights = () => {
             <br/>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 500,
+                    colorVariant: 500,
                     buttonStyle: "outline"
                 }}>
                     500
@@ -249,7 +249,7 @@ export const ColorWeights = () => {
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 600,
+                    colorVariant: 600,
                     buttonStyle: "outline"
                 }}>
                     600
@@ -257,7 +257,7 @@ export const ColorWeights = () => {
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 700,
+                    colorVariant: 700,
                     buttonStyle: "outline"
                 }}>
                     700
@@ -265,7 +265,7 @@ export const ColorWeights = () => {
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 800,
+                    colorVariant: 800,
                     buttonStyle: "outline"
                 }}>
                     800
@@ -273,7 +273,7 @@ export const ColorWeights = () => {
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    colorWeight: 900,
+                    colorVariant: 900,
                     buttonStyle: "outline"
                 }}>
                     900
@@ -359,11 +359,21 @@ export const Rounded = () => {
     )
 };
 
-export const ExampleWithKnobs = () => {
+export const FullWidth = () => {
+    return (
+        <Button theme={{
+            full: true
+        }}>
+            Full Width Button
+        </Button>
+    )
+};
+
+export const Knobs = () => {
     return (
         <Button onClick={action('button clicked')} theme={{
             color: select("color", ["primary", "secondary", "neutral", "error", "warning"]),
-            colorWeight: number("colorWeight", 700, {
+            colorVariant: number("colorWeight", 700, {
                 range: true,
                 min: 100,
                 max: 900,
@@ -377,6 +387,7 @@ export const ExampleWithKnobs = () => {
                 "Large": "lg",
             }, "md"),
             border: select("border", ["flat", "rounded"]),
+            full: boolean("full", false)
         }}>
             {text('children', "hello")}
         </Button>

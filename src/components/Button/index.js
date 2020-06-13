@@ -7,19 +7,22 @@ import * as PropTypes from 'prop-types';
  *- The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
  **/
 export default function Button({children, theme, ...props}) {
-    const {color = "primary", colorWeight = 700, buttonStyle = "normal", size = "md", border = "flat"} = theme;
+    const {color = "primary", colorVariant = 700, buttonStyle = "normal", size = "md", border = "flat", full = false} = theme;
 
     const className = classNames(
         'border',
-        {[`border-${color}-${colorWeight}`]: buttonStyle === "normal"},
-        {[`bg-${color}-${colorWeight}`]: buttonStyle === "normal"},
-        {[`text-on_${color}-${colorWeight}`]: buttonStyle === "normal"},
-        {[`border-${color}-${colorWeight}`]: buttonStyle === "outline"},
-        {[`text-${color}-${colorWeight}`]: buttonStyle === "outline"},
+        {[`border-${color}-${colorVariant}`]: buttonStyle === "normal"},
+        {[`bg-${color}-${colorVariant}`]: buttonStyle === "normal"},
+        {[`text-on_${color}-${colorVariant}`]: buttonStyle === "normal"},
+        {[`border-${color}-${colorVariant}`]: buttonStyle === "outline"},
+        {[`text-${color}-${colorVariant}`]: buttonStyle === "outline"},
         {'rounded-md': border === "rounded"},
-        'shadow-md',
+        {'w-full': full},
+        'shadow',
         'px-5 py-1',
-        `text-${size}`
+        `text-${size}`,
+        'hover:shadow-md',
+        'transition-shadow duration-100'
     );
 
     return (
@@ -42,14 +45,15 @@ Button.propTypes = {
      */
     theme: PropTypes.shape({
         color: PropTypes.oneOf(["primary", "secondary", "neutral", "error", "warning"]),
-        colorWeight: PropTypes.oneOf([100, 200, 300, 400, 500, 600, 700, 800, 900]),
+        colorVariant: PropTypes.oneOf([100, 200, 300, 400, 500, 600, 700, 800, 900]),
         buttonStyle: PropTypes.oneOf(["normal", "outline"]),
         size: PropTypes.oneOf(["xs", "sm", "md", "lg"]),
         border: PropTypes.oneOf(["flat", "rounded"]),
+        full: PropTypes.bool,
     })
 };
 
 Button.defaultProps = {
     children: "Button",
-    theme: {color: "primary", colorWeight: 900, buttonStyle: "normal", size: "md", border: "flat"}
+    theme: {color: "primary", colorVariant: 900, buttonStyle: "normal", size: "md", border: "flat", full: false}
 };
