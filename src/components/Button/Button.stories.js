@@ -1,6 +1,7 @@
 import React from 'react';
 import {action} from '@storybook/addon-actions';
 import {withKnobs, text, select, number, boolean} from '@storybook/addon-knobs/react';
+import {PaddingWrap} from "../utils/PaddingWrap";
 
 import Button from './';
 
@@ -11,14 +12,6 @@ export default {
         component: Button,
         componentSubtitle: 'Displays an button',
     },
-};
-
-const PaddingWrap = ({children}) => {
-    return (
-        <div style={{display: "inline-block", padding: "5px"}}>
-            {children}
-        </div>
-    )
 };
 
 export const Colors = () => {
