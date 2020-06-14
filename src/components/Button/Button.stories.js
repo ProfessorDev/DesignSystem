@@ -386,28 +386,30 @@ export const withIcons = () => {
     )
 };
 
+const generateThemeWithKnobs = () => ({
+    color: select("color", ["primary", "secondary", "neutral", "error", "warning"]),
+    colorVariant: number("colorWeight", 700, {
+        range: true,
+        min: 100,
+        max: 900,
+        step: 100,
+    }),
+    buttonStyle: select("buttonStyle", ["normal", "outline", "text"]),
+    size: select("size", {
+        "Extra Small": "xs",
+        "Small": "sm",
+        "Medium": "md",
+        "Large": "lg",
+    }, "md"),
+    border: select("border", ["flat", "rounded"]),
+    full: boolean("full", false),
+    onlyIcon: boolean("onlyIcon", false),
+    shadow: boolean("shadow", true),
+});
+
 export const ButtonWithIconKnobs = () => {
     return (
-        <Button onClick={action('button clicked')} theme={{
-            color: select("color", ["primary", "secondary", "neutral", "error", "warning"]),
-            colorVariant: number("colorWeight", 700, {
-                range: true,
-                min: 100,
-                max: 900,
-                step: 100,
-            }),
-            buttonStyle: select("buttonStyle", ["normal", "outline", "text"]),
-            size: select("size", {
-                "Extra Small": "xs",
-                "Small": "sm",
-                "Medium": "md",
-                "Large": "lg",
-            }, "md"),
-            border: select("border", ["flat", "rounded"]),
-            full: boolean("full", false),
-            onlyIcon: boolean("onlyIcon", false),
-            shadow: boolean("shadow", true),
-        }}>
+        <Button onClick={action('button clicked')} theme={generateThemeWithKnobs()}>
             <i className="fas fa-times"/>
         </Button>
     );
@@ -415,26 +417,7 @@ export const ButtonWithIconKnobs = () => {
 
 export const ButtonWithIconAndTextKnobs = () => {
     return (
-        <Button onClick={action('button clicked')} theme={{
-            color: select("color", ["primary", "secondary", "neutral", "error", "warning"]),
-            colorVariant: number("colorWeight", 700, {
-                range: true,
-                min: 100,
-                max: 900,
-                step: 100,
-            }),
-            buttonStyle: select("buttonStyle", ["normal", "outline", "text"]),
-            size: select("size", {
-                "Extra Small": "xs",
-                "Small": "sm",
-                "Medium": "md",
-                "Large": "lg",
-            }, "md"),
-            border: select("border", ["flat", "rounded"]),
-            full: boolean("full", false),
-            onlyIcon: boolean("onlyIcon", false),
-            shadow: boolean("shadow", true),
-        }}>
+        <Button onClick={action('button clicked')} theme={generateThemeWithKnobs()}>
             <i className="fas fa-times"/> EXAMPLE
         </Button>
     );
@@ -442,26 +425,7 @@ export const ButtonWithIconAndTextKnobs = () => {
 
 export const ButtonWithTextIconKnobs = () => {
     return (
-        <Button onClick={action('button clicked')} theme={{
-            color: select("color", ["primary", "secondary", "neutral", "error", "warning"]),
-            colorVariant: number("colorWeight", 700, {
-                range: true,
-                min: 100,
-                max: 900,
-                step: 100,
-            }),
-            buttonStyle: select("buttonStyle", ["normal", "outline", "text"]),
-            size: select("size", {
-                "Extra Small": "xs",
-                "Small": "sm",
-                "Medium": "md",
-                "Large": "lg",
-            }, "md"),
-            border: select("border", ["flat", "rounded"]),
-            full: boolean("full", false),
-            onlyIcon: boolean("onlyIcon", false),
-            shadow: boolean("shadow", true),
-        }}>
+        <Button onClick={action('button clicked')} theme={generateThemeWithKnobs()}>
             {text('text', 'EXAMPLE')}
         </Button>
     );
