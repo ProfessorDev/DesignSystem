@@ -100,6 +100,47 @@ export const Colors = () => {
                     Warning
                 </Button>
             </PaddingWrap>
+            <br/>
+            <PaddingWrap>
+                <Button onClick={action('button clicked')} theme={{
+                    color: "primary",
+                    buttonStyle: "text"
+                }}>
+                    Primary
+                </Button>
+            </PaddingWrap>
+            <PaddingWrap>
+                <Button onClick={action('button clicked')} theme={{
+                    color: "secondary",
+                    buttonStyle: "text"
+                }}>
+                    Secondary
+                </Button>
+            </PaddingWrap>
+            <PaddingWrap>
+                <Button onClick={action('button clicked')} theme={{
+                    color: "neutral",
+                    buttonStyle: "text"
+                }}>
+                    Neutral
+                </Button>
+            </PaddingWrap>
+            <PaddingWrap>
+                <Button onClick={action('button clicked')} theme={{
+                    color: "error",
+                    buttonStyle: "text"
+                }}>
+                    Error
+                </Button>
+            </PaddingWrap>
+            <PaddingWrap>
+                <Button onClick={action('button clicked')} theme={{
+                    color: "warning",
+                    buttonStyle: "text"
+                }}>
+                    Warning
+                </Button>
+            </PaddingWrap>
         </>
     )
 };
@@ -283,76 +324,21 @@ export const ColorWeights = () => {
     )
 };
 
-export const Rounded = () => {
+export const Border = () => {
     return (
         <>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    size: "xs",
-                    border: "rounded"
+                    border: "flat"
                 }}>
-                    Extra Small
+                    Flat
                 </Button>
             </PaddingWrap>
             <PaddingWrap>
                 <Button onClick={action('button clicked')} theme={{
-                    size: "sm",
                     border: "rounded"
                 }}>
-                    Small
-                </Button>
-            </PaddingWrap>
-            <PaddingWrap>
-                <Button onClick={action('button clicked')} theme={{
-                    size: "md",
-                    border: "rounded"
-                }}>
-                    Medium
-                </Button>
-            </PaddingWrap>
-            <PaddingWrap>
-                <Button onClick={action('button clicked')} theme={{
-                    size: "lg",
-                    border: "rounded"
-                }}>
-                    Large
-                </Button>
-            </PaddingWrap>
-            <br/>
-            <PaddingWrap>
-                <Button onClick={action('button clicked')} theme={{
-                    size: "xs",
-                    buttonStyle: "outline",
-                    border: "rounded"
-                }}>
-                    Extra Small
-                </Button>
-            </PaddingWrap>
-            <PaddingWrap>
-                <Button onClick={action('button clicked')} theme={{
-                    size: "sm",
-                    buttonStyle: "outline",
-                    border: "rounded"
-                }}>
-                    Small
-                </Button>
-            </PaddingWrap>
-            <PaddingWrap>
-                <Button onClick={action('button clicked')} theme={{
-                    size: "md",
-                    buttonStyle: "outline",
-                    border: "rounded"
-                }}>
-                    Medium
-                </Button>
-            </PaddingWrap>
-            <PaddingWrap>
-                <Button onClick={action('button clicked')} theme={{
-                    size: "lg",
-                    buttonStyle: "outline",
-                    border: "rounded"
-                }}>
-                    Large
+                    Rounded
                 </Button>
             </PaddingWrap>
         </>
@@ -384,11 +370,30 @@ export const withIcons = () => {
                     <i className="fas fa-file-alt"/> file
                 </Button>
             </PaddingWrap>
+            <PaddingWrap>
+                <Button theme={{
+                    buttonStyle: "outline",
+                    size: "xs",
+                    onlyIcon: true,
+                }}>
+                    <i className="fas fa-times"/>
+                </Button>
+            </PaddingWrap>
+            <PaddingWrap>
+                <Button onClick={action('button clicked')} theme={{
+                    size: "xs",
+                    buttonStyle: "text",
+                    onlyIcon: true,
+                    shadow: false,
+                }}>
+                    <i className="fas fa-times"/>
+                </Button>
+            </PaddingWrap>
         </>
     )
 };
 
-export const Knobs = () => {
+export const ButtonWithIconKnobs = () => {
     return (
         <Button onClick={action('button clicked')} theme={{
             color: select("color", ["primary", "secondary", "neutral", "error", "warning"]),
@@ -398,7 +403,7 @@ export const Knobs = () => {
                 max: 900,
                 step: 100,
             }),
-            buttonStyle: select("buttonStyle", ["normal", "outline"]),
+            buttonStyle: select("buttonStyle", ["normal", "outline", "text"]),
             size: select("size", {
                 "Extra Small": "xs",
                 "Small": "sm",
@@ -406,9 +411,65 @@ export const Knobs = () => {
                 "Large": "lg",
             }, "md"),
             border: select("border", ["flat", "rounded"]),
-            full: boolean("full", false)
+            full: boolean("full", false),
+            onlyIcon: boolean("onlyIcon", false),
+            shadow: boolean("shadow", true),
         }}>
-            {text('children', "hello")}
+            <i className="fas fa-times"/>
+        </Button>
+    );
+};
+
+export const ButtonWithIconAndTextKnobs = () => {
+    return (
+        <Button onClick={action('button clicked')} theme={{
+            color: select("color", ["primary", "secondary", "neutral", "error", "warning"]),
+            colorVariant: number("colorWeight", 700, {
+                range: true,
+                min: 100,
+                max: 900,
+                step: 100,
+            }),
+            buttonStyle: select("buttonStyle", ["normal", "outline", "text"]),
+            size: select("size", {
+                "Extra Small": "xs",
+                "Small": "sm",
+                "Medium": "md",
+                "Large": "lg",
+            }, "md"),
+            border: select("border", ["flat", "rounded"]),
+            full: boolean("full", false),
+            onlyIcon: boolean("onlyIcon", false),
+            shadow: boolean("shadow", true),
+        }}>
+            <i className="fas fa-times"/> EXAMPLE
+        </Button>
+    );
+};
+
+export const ButtonWithTextIconKnobs = () => {
+    return (
+        <Button onClick={action('button clicked')} theme={{
+            color: select("color", ["primary", "secondary", "neutral", "error", "warning"]),
+            colorVariant: number("colorWeight", 700, {
+                range: true,
+                min: 100,
+                max: 900,
+                step: 100,
+            }),
+            buttonStyle: select("buttonStyle", ["normal", "outline", "text"]),
+            size: select("size", {
+                "Extra Small": "xs",
+                "Small": "sm",
+                "Medium": "md",
+                "Large": "lg",
+            }, "md"),
+            border: select("border", ["flat", "rounded"]),
+            full: boolean("full", false),
+            onlyIcon: boolean("onlyIcon", false),
+            shadow: boolean("shadow", true),
+        }}>
+            {text('text', 'EXAMPLE')}
         </Button>
     );
 };
