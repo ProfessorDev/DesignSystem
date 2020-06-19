@@ -3,7 +3,7 @@ import {action} from '@storybook/addon-actions';
 import {withKnobs, text, select, number, boolean} from '@storybook/addon-knobs/react';
 import {PaddingWrap} from "../utils/PaddingWrap";
 
-import Button from './';
+import Button from './Button';
 
 export default {
     title: 'Design System|Button',
