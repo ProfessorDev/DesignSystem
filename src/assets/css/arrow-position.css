@@ -1,0 +1,39 @@
+.arrow-top-left {
+    top: -17px;
+    left: 10px;
+}
+
+.arrow-top-right {
+    top: -17px;
+    right: 10px;
+}
+
+.arrow-bottom-left {
+    bottom: -17px;
+    left: 10px;
+}
+
+.arrow-bottom-right {
+    bottom: -17px;
+    right: 10px;
+}
+
+.arrow-left-top {
+    left: -17px;
+    top: 10px;
+}
+
+.arrow-left-bottom {
+    left: -17px;
+    bottom: 10px;
+}
+
+.arrow-right-top {
+    right: -17px;
+    top: 10px;
+}
+
+.arrow-right-bottom {
+    right: -17px;
+    bottom: 10px;
+}
