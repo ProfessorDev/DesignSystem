@@ -9,10 +9,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './cssImport';
+import ShowPassword from './components/password';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <ShowPassword></ShowPassword>
   </React.StrictMode>,
   document.getElementById('root')
 );
