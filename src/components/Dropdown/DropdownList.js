@@ -1,12 +1,13 @@
 import React from "react";
 import classNames from "classnames";
 
-export default function DropdownList({children, direction = "top-left"}) {
+export default function DropdownList({children, direction = "top-left", width = "auto"}) {
     const className = classNames(
         'relative',
         'border',
         // 'shadow-md',
         'rounded-md',
+        `w-${width}`,
     );
 
     let directionClassName = classNames(
