@@ -1,4 +1,5 @@
 import React from "react";
+import * as PropTypes from 'prop-types';
 import classNames from "classnames";
 
 export default function DropdownList({children, direction = "top-left", width = "auto"}) {
@@ -99,6 +100,12 @@ export default function DropdownList({children, direction = "top-left", width = 
     )
 }
 
-DropdownList.propTypes = {};
+DropdownList.propTypes = {
+    direction: PropTypes.oneOf(["top-left", "top-right", "bottom-left", "bottom-right", "left-top", "left-bottom", "right-top", "right-bottom"]),
+    width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
 
-DropdownList.defaultProps = {};
+DropdownList.defaultProps = {
+    direction: "top-left",
+    width: "auto"
+};
