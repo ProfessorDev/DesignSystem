@@ -40,7 +40,7 @@ export const Example = () => {
                                     Profile <i className="fa fa-caret-down"/>
                                 </div>
                             </DropdownButton>
-                            <DropdownList direction="top-right" width={"64"}>
+                            <DropdownList direction="top-right">
                                 <DropdownItem theme={{color: "primary"}}>
                                     <div>
                                         Item1
@@ -69,7 +69,7 @@ export const Example = () => {
                                             Login
                                         </div>
                                         <div className="text-xs whitespace-pre">
-                                            Click here to Login
+                                            Click here to Login fdfdsf d fds f dsf df sdf
                                         </div>
                                     </DropdownItem>
                                 </DropdownGroup>
