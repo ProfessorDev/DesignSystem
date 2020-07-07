@@ -3,6 +3,7 @@ import DropdownList from "./DropdownList";
 import {withKnobs} from '@storybook/addon-knobs/react';
 import DropdownItem from "./DropdownItem";
 import DropdownDivider from "./DropdownDivider";
+import DropdownGroup from "./DropdownGroup";
 
 export default {
     title: "Design System|Dropdown List",
@@ -270,6 +271,25 @@ export const CustomDropdownItem = () => {
                             Click to open main settings panel
                         </div>
                     </DropdownItem>
+                    <DropdownDivider/>
+                    <DropdownGroup>
+                        <DropdownItem theme={{color: "primary"}}>
+                            <div className="text-sm">
+                                Signup
+                            </div>
+                            <div className="text-xs">
+                                Click here to signup
+                            </div>
+                        </DropdownItem>
+                        <DropdownItem theme={{color: "primary"}}>
+                            <div className="text-sm">
+                                Login
+                            </div>
+                            <div className="text-xs">
+                                Click here to Login
+                            </div>
+                        </DropdownItem>
+                    </DropdownGroup>
                 </DropdownList>
             </div>
         </>

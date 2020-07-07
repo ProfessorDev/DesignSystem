@@ -2,15 +2,11 @@ import React from "react";
 import classNames from "classnames";
 import * as PropTypes from "prop-types";
 
-export default function DropdownItem({children, theme, ...props}) {
-    const {color = "primary"} = theme;
+export default function DropdownGroup({children, ...props}) {
 
     const className = classNames(
-        `hover:bg-${color}-700`,
-        `hover:text-on_${color}-700`,
-        'px-4 py-1',
-        'cursor-pointer',
-        'flex-1',
+        'flex',
+        'flex-row',
     );
 
     return (
@@ -23,8 +19,10 @@ export default function DropdownItem({children, theme, ...props}) {
     )
 }
 
-DropdownItem.propTypes = {
+DropdownGroup.propTypes = {
     children: PropTypes.string,
 };
 
-DropdownItem.defaultProps = {};
+DropdownGroup.defaultProps = {
+
+};
