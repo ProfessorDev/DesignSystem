@@ -86,6 +86,19 @@ export const Example = () => {
                                         please select one of the option dfsdf df sfsdfdfs
                                     </div>
                                 </DropdownInfo>
+                                <DropdownDivider/>
+                                <DropdownItem theme={{color: "primary"}}>
+                                    {(open, setOpen) => (
+                                        <div onClick={() => setOpen(false)}>
+                                            <div className="text-sm">
+                                                Close
+                                            </div>
+                                            <div className="text-xs whitespace-pre">
+                                                Click here to close
+                                            </div>
+                                        </div>
+                                    )}
+                                </DropdownItem>
                             </DropdownList>
                         </Dropdown>
                     </TopMenuItem>
