@@ -7,6 +7,8 @@ import DropdownButton from "../Dropdown/DropdownButton";
 import DropdownList from "../Dropdown/DropdownList";
 import DropdownItem from "../Dropdown/DropdownItem";
 import DropdownGroup from "../Dropdown/DropdownGroup";
+import DropdownDivider from "../Dropdown/DropdownDivider";
+import DropdownInfo from "../Dropdown/DropdownInfo";
 
 export default {
     title: "Design System|TopMenu",
@@ -46,15 +48,19 @@ export const Example = () => {
                                         Item1
                                     </div>
                                 </DropdownItem>
+                                <DropdownDivider/>
                                 <DropdownItem theme={{color: "primary"}}>
                                     Item2
                                 </DropdownItem>
+                                <DropdownDivider/>
                                 <DropdownItem theme={{color: "primary"}}>
                                     Item3
                                 </DropdownItem>
+                                <DropdownDivider/>
                                 <DropdownItem theme={{color: "primary"}}>
                                     Item4
                                 </DropdownItem>
+                                <DropdownDivider/>
                                 <DropdownGroup>
                                     <DropdownItem theme={{color: "primary"}}>
                                         <div className="text-sm">
@@ -64,15 +70,22 @@ export const Example = () => {
                                             Click here to signup
                                         </div>
                                     </DropdownItem>
+                                    <DropdownDivider/>
                                     <DropdownItem theme={{color: "primary"}}>
                                         <div className="text-sm">
                                             Login
                                         </div>
                                         <div className="text-xs whitespace-pre">
-                                            Click here to Login fdfdsf d fds f dsf df sdf
+                                            Click here to Login
                                         </div>
                                     </DropdownItem>
                                 </DropdownGroup>
+                                <DropdownDivider/>
+                                <DropdownInfo>
+                                    <div className="text-center text-sm whitespace-pre">
+                                        please select one of the option dfsdf df sfsdfdfs
+                                    </div>
+                                </DropdownInfo>
                             </DropdownList>
                         </Dropdown>
                     </TopMenuItem>
