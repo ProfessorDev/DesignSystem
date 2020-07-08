@@ -83,7 +83,10 @@ export default function Dropdown({children, direction = "bottom-right"}) {
             {
                 open &&
                 <div className={dropdownClassName}>
-                    {dropdownList}
+                    {cloneElement(dropdownList, {
+                        setDropdownOpen: setOpen,
+                        ...dropdownList.props,
+                    })}
                 </div>
             }
         </div>
