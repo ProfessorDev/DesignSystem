@@ -1,8 +1,16 @@
-import React from "react";
+import React, {useCallback, useRef} from "react";
 import * as PropTypes from 'prop-types';
 import classNames from "classnames";
+import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
 
-export default function DropdownList({children, direction = "top-left", width = "auto"}) {
+export default function DropdownList({children, direction = "top-left", width = "auto", setDropdownOpen}) {
+    const closeWhenOutsideClicked = useCallback(() => {
+        setDropdownOpen(false);
+    }, [setDropdownOpen]);
+
+    const element = useRef();
+    useOutsideClickHandler(closeWhenOutsideClicked, element);
+
     const className = classNames(
         'relative',
         'border',
@@ -91,6 +99,7 @@ export default function DropdownList({children, direction = "top-left", width = 
     return (
         <div
             className={className}
+            ref={element}
         >
             <div className={directionClassName}>
 

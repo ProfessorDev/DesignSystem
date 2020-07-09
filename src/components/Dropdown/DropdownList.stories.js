@@ -3,6 +3,8 @@ import DropdownList from "./DropdownList";
 import {withKnobs} from '@storybook/addon-knobs/react';
 import DropdownItem from "./DropdownItem";
 import DropdownDivider from "./DropdownDivider";
+import DropdownGroup from "./DropdownGroup";
+import DropdownInfo from "./DropdownInfo";
 
 export default {
     title: "Design System|Dropdown List",
@@ -270,6 +272,32 @@ export const CustomDropdownItem = () => {
                             Click to open main settings panel
                         </div>
                     </DropdownItem>
+                    <DropdownDivider/>
+                    <DropdownGroup>
+                        <DropdownItem theme={{color: "primary"}}>
+                            <div className="text-sm">
+                                Signup
+                            </div>
+                            <div className="text-xs">
+                                Click here to signup
+                            </div>
+                        </DropdownItem>
+                        <DropdownDivider/>
+                        <DropdownItem theme={{color: "primary"}}>
+                            <div className="text-sm">
+                                Login
+                            </div>
+                            <div className="text-xs">
+                                Click here to Login
+                            </div>
+                        </DropdownItem>
+                    </DropdownGroup>
+                    <DropdownDivider/>
+                    <DropdownInfo>
+                        <div className="text-sm text-center">
+                            This is a DropdownInfo. There is no click option for this
+                        </div>
+                    </DropdownInfo>
                 </DropdownList>
             </div>
         </>
