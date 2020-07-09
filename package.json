@@ -18,7 +18,7 @@
     "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch:css": "postcss src/assets/css/*.css --dir src/assets/css/build",
+    "watch:css": "postcss src/assets/css/*.css --dir src/assets/css/build --watch &",
     "build:css": "postcss src/assets/css/*.css --dir src/assets/css/build",
     "storybook": "npm run watch:css && start-storybook -p 9009 -s public",
     "build-storybook": "npm run build:css && build-storybook -s public"
