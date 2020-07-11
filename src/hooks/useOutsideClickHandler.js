@@ -1,5 +1,5 @@
 import useEventHandler from "./useEventHandler";
-import {useCallback, useRef} from "react";
+import {useCallback} from "react";
 
 export default function useOutsideClickHandler(onOutsideClick, element) {
     const handleOutsideClick = useCallback((event) => {

@@ -1,6 +1,6 @@
 import c from "classnames";
 
-export default function tailwindClassNamesExtension(classNames, add = '') {
+export default function twClassNames(classNames, add = '') {
     if (Array.isArray(classNames)) {
         return c(
             ...classNames
@@ -14,7 +14,7 @@ export default function tailwindClassNamesExtension(classNames, add = '') {
 
         return c(
             ...keys.flatMap(key => {
-                return tailwindClassNamesExtension(classNames[key], key.length > 0 ? (add.length > 0 ? `${add}:${key}` : key) : add);
+                return twClassNames(classNames[key], key.length > 0 ? (add.length > 0 ? `${add}:${key}` : key) : add);
             })
         );
     }
