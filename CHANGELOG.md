@@ -1,3 +1,17 @@
+# v0.1.2 (Mon Jul 13 2020)
+
+#### ⚠️ Pushed to `master`
+
+- updated DropdownList background to white and can add custom css ([@ironmanvim](https://github.com/ironmanvim))
+- updated TopMenu background to white and can add custom css ([@ironmanvim](https://github.com/ironmanvim))
+- updated SideNav to auto fill the given height ([@ironmanvim](https://github.com/ironmanvim))
+
+#### Authors: 1
+
+- Vishal Chiluveri ([@ironmanvim](https://github.com/ironmanvim))
+
+---
+
 # v0.1.1 (Sun Jul 12 2020)
 
 #### ⚠️ Pushed to `master`
