@@ -26,3 +26,5 @@ yarn-error.log*
 /src/assets/css/build
 
 storybook-static
+dist
+.env
