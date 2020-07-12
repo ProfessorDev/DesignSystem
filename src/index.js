@@ -1,24 +1,43 @@
-export Button from './components/Button/Button';
-export SideNav from './components/SideNav/SideNav';
-export SideNavLabel from './components/SideNav/SideNavLabel';
-export TopMenu from './components/TopMenu/TopMenu';
-export TopMenuItem from './components/TopMenu/TopMenuItem';
-export TopMenuDivider from './components/TopMenu/TopMenuDivider';
-export Dropdown from './components/Dropdown/Dropdown';
-export DropdownList from './components/Dropdown/DropdownList';
-export DropdownButton from './components/Dropdown/DropdownButton';
-export DropdownItem from './components/Dropdown/DropdownItem';
-export DropdownInfo from './components/Dropdown/DropdownInfo';
-export DropdownGroup from './components/Dropdown/DropdownGroup';
-export DropdownDivider from './components/Dropdown/DropdownDivider';
-export Breadcrumb from './components/Breadcrumb/Breadcrumb';
-export BreadcrumbItem from './components/Breadcrumb/BreadcrumbItem';
-export twClassNames from './utils/tailwind_extensions/twClassNames';
+import Button from './components/Button/Button';
+import SideNav from './components/SideNav/SideNav';
+import SideNavLabel from './components/SideNav/SideNavLabel';
+import TopMenu from './components/TopMenu/TopMenu';
+import TopMenuItem from './components/TopMenu/TopMenuItem';
+import TopMenuDivider from './components/TopMenu/TopMenuDivider';
+import Dropdown from './components/Dropdown/Dropdown';
+import DropdownList from './components/Dropdown/DropdownList';
+import DropdownButton from './components/Dropdown/DropdownButton';
+import DropdownItem from './components/Dropdown/DropdownItem';
+import DropdownInfo from './components/Dropdown/DropdownInfo';
+import DropdownGroup from './components/Dropdown/DropdownGroup';
+import DropdownDivider from './components/Dropdown/DropdownDivider';
+import Breadcrumb from './components/Breadcrumb/Breadcrumb';
+import BreadcrumbItem from './components/Breadcrumb/BreadcrumbItem';
+import twClassNames from './utils/tailwind_extensions/twClassNames';
 
 import useEventHandler from "./hooks/useEventHandler";
 import useOutsideClickHandler from "./hooks/useOutsideClickHandler";
 
-export const hooks = {
+const hooks = {
     useEventHandler,
     useOutsideClickHandler,
 };
+
+export {
+    Button,
+    SideNav,
+    SideNavLabel,
+    TopMenu,
+    TopMenuItem,
+    TopMenuDivider,
+    Dropdown,
+    DropdownList,
+    DropdownButton,
+    DropdownItem,
+    DropdownInfo,
+    DropdownGroup,
+    DropdownDivider,
+    Breadcrumb,
+    BreadcrumbItem,
+    hooks,
+}
