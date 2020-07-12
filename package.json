@@ -1,7 +1,7 @@
 {
-  "name": "online_tutorials",
+  "name": "professordev-design-system",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@bit/ironmanvim.comp.fontawesome": "0.0.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -15,13 +15,14 @@
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch:css": "postcss src/assets/css/*.css --dir src/assets/css/build --watch &",
     "build:css": "postcss src/assets/css/*.css --dir src/assets/css/build",
     "storybook": "npm run watch:css && start-storybook -p 9009 -s public",
-    "build-storybook": "npm run build:css && build-storybook -s public"
+    "build-storybook": "npm run build:css && build-storybook -s public",
+    "release": "auto shipit"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.4",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
@@ -46,11 +48,37 @@
     "@storybook/addon-storysource": "^5.3.19",
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/addons": "^5.3.19",
+    "@storybook/client-api": "latest",
     "@storybook/preset-create-react-app": "^3.0.0",
     "@storybook/react": "^5.3.19",
+    "auto": "^9.43.1",
     "autoprefixer": "^9.8.0",
+    "cross-env": "^7.0.2",
     "postcss-cli": "^7.1.1",
-    "tailwindcss": "^1.4.6",
-    "@storybook/client-api": "latest"
-  }
+    "tailwindcss": "^1.4.6"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "description": "This Design System is bootstrapped with [StoryBook](https://storybook.js.org/) and [TailwindCSS](https://tailwindcss.com/).",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProfessorDev/DesignSystem.git"
+  },
+  "keywords": [
+    "Design",
+    "System",
+    "DesignSystem",
+    "ProfessorDev",
+    "Professor"
+  ],
+  "author": "Vishal Chiluveri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ProfessorDev/DesignSystem/issues"
+  },
+  "homepage": "https://github.com/ProfessorDev/DesignSystem#readme"
 }
