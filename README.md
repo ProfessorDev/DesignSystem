@@ -1,4 +1,4 @@
-This online tutorials app is bootstrapped with [StoryBook](https://storybook.js.org/) and [TailwindCSS](https://tailwindcss.com/).
+This Design System app is bootstrapped with [StoryBook](https://storybook.js.org/) and [TailwindCSS](https://tailwindcss.com/).
 
 ## Available Scripts
 

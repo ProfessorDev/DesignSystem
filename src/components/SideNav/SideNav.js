@@ -9,6 +9,8 @@ export default function SideNav({minimum, full, mode, theme, ...props}) {
 
     const className = classNames(
         `w-${width}`,
+        `h-full`,
+        `bg-${color}-800`,
     );
 
     return (

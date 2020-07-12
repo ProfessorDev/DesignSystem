@@ -1,13 +1,15 @@
 import React from "react";
 import classNames from 'classnames';
 
-export default function TopMenu({children, leftChildren, rightChildren}) {
-    let className = classNames(
+export default function TopMenu({children, className, leftChildren, rightChildren}) {
+    className = classNames(
         // 'border',
         // 'border-red-600',
         'flex',
         'h-10',
-        'border-box'
+        'border-box',
+        'bg-white',
+        className,
     );
 
     return (
