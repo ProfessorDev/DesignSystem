@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import classNames from "classnames";
 import useOutsideClickHandler from "../../hooks/useOutsideClickHandler";
 
-export default function DropdownList({children, direction = "top-left", width = "auto", setDropdownOpen}) {
+export default function DropdownList({children, direction = "top-left", width = "auto", className = "", setDropdownOpen}) {
     const closeWhenOutsideClicked = useCallback(() => {
         setDropdownOpen(false);
     }, [setDropdownOpen]);
@@ -11,12 +11,14 @@ export default function DropdownList({children, direction = "top-left", width = 
     const element = useRef();
     useOutsideClickHandler(closeWhenOutsideClicked, element);
 
-    const className = classNames(
+    className = classNames(
         'relative',
         'border',
         // 'shadow-md',
         'rounded-md',
         `w-${width}`,
+        `bg-white`,
+        className,
     );
 
     let directionClassName = classNames(
