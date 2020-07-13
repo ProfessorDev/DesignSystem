@@ -1,3 +1,15 @@
+# v0.1.3 (Mon Jul 13 2020)
+
+#### ⚠️ Pushed to `master`
+
+- updated all components to include className (vishalchiluveri@gmail.com)
+
+#### Authors: 1
+
+- Vishal Chiluveri (vishalchiluveri@gmail.com)
+
+---
+
 # v0.1.2 (Mon Jul 13 2020)
 
 #### ⚠️ Pushed to `master`
