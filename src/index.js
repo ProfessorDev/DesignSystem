@@ -39,5 +39,6 @@ export {
     DropdownDivider,
     Breadcrumb,
     BreadcrumbItem,
+    twClassNames,
     hooks,
 }
