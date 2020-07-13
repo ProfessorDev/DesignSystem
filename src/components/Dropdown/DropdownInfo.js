@@ -2,9 +2,10 @@ import React from "react";
 import classNames from "classnames";
 import * as PropTypes from "prop-types";
 
-export default function DropdownInfo({children, ...props}) {
+export default function DropdownInfo({children, className, ...props}) {
 
-    const className = classNames(
+    className = classNames(
+        className,
         'px-4 py-1',
         'flex-1',
     );

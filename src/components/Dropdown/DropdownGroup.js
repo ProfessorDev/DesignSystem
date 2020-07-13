@@ -2,9 +2,10 @@ import React from "react";
 import classNames from "classnames";
 import * as PropTypes from "prop-types";
 
-export default function DropdownGroup({children, ...props}) {
+export default function DropdownGroup({children, className, ...props}) {
 
-    const className = classNames(
+    className = classNames(
+        className,
         'flex',
         'flex-row',
     );

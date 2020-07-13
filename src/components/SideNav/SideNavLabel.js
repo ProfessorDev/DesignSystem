@@ -43,7 +43,7 @@ export default function SideNavLabel({children, theme, ...props}) {
     return (
         <div
             {...props}
-            className={classNames(className, props.className)}
+            className={classNames(props.className, className)}
         >
             {children}
         </div>

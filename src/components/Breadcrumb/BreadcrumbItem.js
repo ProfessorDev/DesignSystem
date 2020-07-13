@@ -2,8 +2,9 @@ import React from "react";
 import * as PropTypes from "prop-types";
 import classNames from 'classnames';
 
-export default function BreadcrumbItem({children, color = "primary", active}) {
-    let className = classNames(
+export default function BreadcrumbItem({children, className, color = "primary", active}) {
+    className = classNames(
+        className,
         'inline-block',
         'px-2 py-1',
         'cursor-pointer',

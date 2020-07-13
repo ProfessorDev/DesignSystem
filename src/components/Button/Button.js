@@ -6,7 +6,7 @@ import * as PropTypes from 'prop-types';
  *- Use an avatar for attributing actions or content to specific users.
  *- The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
  **/
-export default function Button({children, theme, ...props}) {
+export default function Button({children, className, theme, ...props}) {
     const {
         color = "primary",
         colorVariant = 700,
@@ -18,7 +18,8 @@ export default function Button({children, theme, ...props}) {
         shadow = true,
     } = theme;
 
-    const className = classNames(
+    className = classNames(
+        className,
         'border',
         {[`border-${color}-${colorVariant}`]: buttonStyle === "normal"},
         {[`bg-${color}-${colorVariant}`]: buttonStyle === "normal"},

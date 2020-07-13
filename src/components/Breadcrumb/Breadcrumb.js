@@ -2,9 +2,9 @@ import React, {Children} from "react";
 import * as PropTypes from "prop-types";
 import classNames from 'classnames';
 
-export default function Breadcrumb({children, as, color = "primary", divider = "/"}) {
+export default function Breadcrumb({children, className, color = "primary", divider = "/"}) {
     return (
-        <div>
+        <div className={className}>
             {Children.map(children, (child, index) => {
                 if (index === children.length - 1) {
                     return child;

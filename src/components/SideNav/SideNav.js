@@ -17,7 +17,7 @@ export default function SideNav({minimum, full, mode, theme, ...props}) {
         <ThemeContext.Provider value={color}>
             <div
                 {...props}
-                className={classNames(className, props.className)}
+                className={classNames(props.className, className)}
             >
                 {mode === "minimum" ? minimum : full}
             </div>
