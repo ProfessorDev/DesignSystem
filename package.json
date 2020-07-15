@@ -59,7 +59,12 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
     ]
   },
   "description": "This Design System is bootstrapped with [StoryBook](https://storybook.js.org/) and [TailwindCSS](https://tailwindcss.com/).",
