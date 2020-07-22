@@ -1,3 +1,15 @@
+# v0.1.6 (Wed Jul 22 2020)
+
+#### ⚠️ Pushed to `master`
+
+- updated index.js to include Input and Password components (vishalchiluveri@gmail.com)
+
+#### Authors: 1
+
+- Vishal Chiluveri (vishalchiluveri@gmail.com)
+
+---
+
 # v0.1.5 (Wed Jul 15 2020)
 
 #### 🐛 Bug Fix
