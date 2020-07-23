@@ -1,6 +1,6 @@
 {
   "name": "professordev-designsystem",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "private": false,
   "dependencies": {
     "@bit/ironmanvim.comp.fontawesome": "0.0.1",
@@ -59,7 +59,12 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
     ]
   },
   "description": "This Design System is bootstrapped with [StoryBook](https://storybook.js.org/) and [TailwindCSS](https://tailwindcss.com/).",

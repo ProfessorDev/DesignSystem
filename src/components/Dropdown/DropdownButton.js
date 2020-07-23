@@ -1,9 +1,9 @@
 import React from "react";
 import classNames from 'classnames';
 
-export default function DropdownButton({children, onClick = () => undefined}) {
-    let className = classNames(
-
+export default function DropdownButton({children, className, onClick = () => undefined}) {
+    className = classNames(
+        className
     );
 
     return (

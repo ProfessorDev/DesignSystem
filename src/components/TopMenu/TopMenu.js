@@ -3,13 +3,11 @@ import classNames from 'classnames';
 
 export default function TopMenu({children, className, leftChildren, rightChildren}) {
     className = classNames(
-        // 'border',
-        // 'border-red-600',
+        className,
         'flex',
         'h-10',
         'border-box',
         'bg-white',
-        className,
     );
 
     return (

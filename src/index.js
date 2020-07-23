@@ -13,6 +13,8 @@ import DropdownGroup from './components/Dropdown/DropdownGroup';
 import DropdownDivider from './components/Dropdown/DropdownDivider';
 import Breadcrumb from './components/Breadcrumb/Breadcrumb';
 import BreadcrumbItem from './components/Breadcrumb/BreadcrumbItem';
+import Input from "./components/Input/Input";
+import Password from "./components/Input/Password";
 import twClassNames from './utils/tailwind_extensions/twClassNames';
 
 import useEventHandler from "./hooks/useEventHandler";
@@ -39,5 +41,8 @@ export {
     DropdownDivider,
     Breadcrumb,
     BreadcrumbItem,
+    twClassNames,
+    Input,
+    Password,
     hooks,
 }

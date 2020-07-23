@@ -6,57 +6,59 @@ import DropdownList from "./DropdownList";
 
 export const DropdownContext = createContext(null);
 
-export default function Dropdown({children, direction = "bottom-right"}) {
+export default function Dropdown({children, className, dropdownClassName,direction = "bottom-right"}) {
     const [open, setOpen] = useState(false);
 
-    let className = classNames(
+    className = classNames(
+        className,
         'relative',
         'inline-block'
     );
 
-    let dropdownClassName = classNames(
+    dropdownClassName = classNames(
+        dropdownClassName,
         'absolute',
     );
 
     if (direction === "top-left") {
         dropdownClassName = classNames(
-            'dropdown__top-left',
             dropdownClassName,
+            'dropdown__top-left',
         )
     } else if (direction === "top-right") {
         dropdownClassName = classNames(
-            'dropdown__top-right',
             dropdownClassName,
+            'dropdown__top-right',
         )
     } else if (direction === "bottom-left") {
         dropdownClassName = classNames(
-            'dropdown__bottom-left',
             dropdownClassName,
+            'dropdown__bottom-left',
         )
     } else if (direction === "bottom-right") {
         dropdownClassName = classNames(
-            'dropdown__bottom-right',
             dropdownClassName,
+            'dropdown__bottom-right',
         )
     } else if (direction === "left-top") {
         dropdownClassName = classNames(
-            'dropdown__left-top',
             dropdownClassName,
+            'dropdown__left-top',
         )
     } else if (direction === "left-bottom") {
         dropdownClassName = classNames(
-            'dropdown__left-bottom',
             dropdownClassName,
+            'dropdown__left-bottom',
         )
     } else if (direction === "right-top") {
         dropdownClassName = classNames(
-            'dropdown__right-top',
             dropdownClassName,
+            'dropdown__right-top',
         )
     } else if (direction === "right-bottom") {
         dropdownClassName = classNames(
-            'dropdown__right-bottom',
             dropdownClassName,
+            'dropdown__right-bottom',
         )
     }
 

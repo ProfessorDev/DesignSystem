@@ -4,12 +4,13 @@ import * as PropTypes from "prop-types";
 import {DropdownContext} from "./Dropdown";
 
 
-export default function DropdownItem({children, theme, ...props}) {
+export default function DropdownItem({children, className, theme, ...props}) {
     const {color = "primary"} = theme;
 
     const dropdownOptions = useContext(DropdownContext);
 
-    const className = classNames(
+    className = classNames(
+        className,
         `hover:bg-${color}-700`,
         `hover:text-on_${color}-700`,
         'px-4 py-1',

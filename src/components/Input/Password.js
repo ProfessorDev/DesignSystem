@@ -2,13 +2,12 @@ import React, {useState} from "react";
 import Input from "./Input";
 import twClassNames from "../../utils/tailwind_extensions/twClassNames";
 
-export default function Password({type, showEye = false, color = "neutral", inputStyle = "outline", ...props}) {
+export default function Password({type, showEye = false, className, eyeClassName, color = "neutral", inputStyle = "outline", ...props}) {
     const [showPassword, setShowPassword] = useState(false);
     let divClassName = twClassNames({
         '': [
+            className,
             'inline-flex',
-            // 'border',
-            // 'border-red-700',
             'relative',
             'w-full',
         ],
@@ -45,14 +44,13 @@ export default function Password({type, showEye = false, color = "neutral", inpu
         });
     }
 
-    let eyeClassName = twClassNames({
+    eyeClassName = twClassNames({
         '': [
+            eyeClassName,
             'inline-flex',
             'justify-center',
             'items-center',
             'p-1',
-            // 'border',
-            // 'border-blue-700',
             'absolute',
             'pointer',
         ]

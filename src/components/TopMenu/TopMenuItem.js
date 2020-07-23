@@ -3,8 +3,7 @@ import classNames from 'classnames';
 
 export default function TopMenuItem({children, className}) {
     className = classNames(
-        // 'border',
-        // 'border-blue-700',
+        className,
         'p-1',
         'h-full',
         'align-top',
@@ -12,7 +11,6 @@ export default function TopMenuItem({children, className}) {
         'items-center',
         'justify-center',
         'border-box',
-        className
     );
 
     return (
