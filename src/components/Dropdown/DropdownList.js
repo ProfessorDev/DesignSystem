@@ -19,6 +19,7 @@ export default function DropdownList({children, direction = "top-left", width = 
         'rounded-md',
         `w-${width}`,
         `bg-white`,
+        'z-50',
     );
 
     let directionClassName = classNames(
