@@ -1,3 +1,20 @@
+# v0.1.7 (Thu Jul 23 2020)
+
+#### 🐛 Bug Fix
+
+- Ironmanvim development [#8](https://github.com/ProfessorDev/DesignSystem/pull/8) ([@ironmanvim](https://github.com/ironmanvim))
+
+#### ⚠️ Pushed to `master`
+
+- fixed z-index of DropdownList ([@ironmanvim](https://github.com/ironmanvim))
+- added .npmrc file ([@ironmanvim](https://github.com/ironmanvim))
+
+#### Authors: 1
+
+- Vishal Chiluveri ([@ironmanvim](https://github.com/ironmanvim))
+
+---
+
 # v0.1.6 (Wed Jul 22 2020)
 
 #### ⚠️ Pushed to `master`
