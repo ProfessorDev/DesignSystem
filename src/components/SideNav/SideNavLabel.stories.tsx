@@ -4,7 +4,7 @@ import React from "react";
 import {PaddingWrap} from "../utils/PaddingWrap";
 
 export default {
-    title: "Design System|SideNav Label",
+    title: 'Design System/SideNav Label',
     decorators: [withKnobs],
     parameters: {
         component: SideNavLabel,

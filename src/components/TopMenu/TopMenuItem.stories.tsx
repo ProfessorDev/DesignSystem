@@ -2,7 +2,7 @@ import React from "react";
 import TopMenuItem from "./TopMenuItem";
 
 export default {
-    title: "Design System|TopMenu Item",
+    title: 'Design System/TopMenu Item',
     parameters: {
         component: TopMenuItem,
     },

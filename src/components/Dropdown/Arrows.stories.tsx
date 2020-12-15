@@ -1,7 +1,7 @@
 import React from "react";
 
 export default {
-    title: "Design System|Arrows",
+    title: 'Design System/Arrows',
 }
 
 export const Arrows = () => {

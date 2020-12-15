@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import SideNav from "./SideNav";
 import SideNavLabel from "./SideNavLabel";
 import {PaddingWrap} from "../utils/PaddingWrap";
-import {withKnobs, select   } from '@storybook/addon-knobs/react';
+import {withKnobs, select   } from '@storybook/addon-knobs';
 
 export default {
-    title: "Design System|SideNav",
+    title: 'Design System/SideNav',
     decorators: [withKnobs],
     parameter: {
         component: SideNav,

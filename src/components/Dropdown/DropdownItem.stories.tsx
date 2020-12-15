@@ -1,10 +1,10 @@
 import React from "react";
 import DropdownItem from "./DropdownItem";
-import {withKnobs} from '@storybook/addon-knobs/react';
+import {withKnobs} from '@storybook/addon-knobs';
 import {PaddingWrap} from "../utils/PaddingWrap";
 
 export default {
-    title: "Design System|Dropdown Item",
+    title: 'Design System/Dropdown Item',
     decorators: [withKnobs],
     parameters: {
         component: DropdownItem,

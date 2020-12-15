@@ -3,7 +3,7 @@ import Input from "./Input";
 import {PaddingWrap} from "../utils/PaddingWrap";
 
 export default {
-    title: "Design System|Input",
+    title: 'Design System/Input',
     parameters: {
         component: Input,
     }

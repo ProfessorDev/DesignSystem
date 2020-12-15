@@ -2,7 +2,7 @@ import React from "react";
 import Password from "./Password";
 
 export default {
-    title: "Design System|Password",
+    title: 'Design System/Password',
     parameters: {
         component: Password,
     }

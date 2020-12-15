@@ -7,9 +7,7 @@ function App() {
         <div className={classNames(
             'p-1'
         )}>
-            <Button>
-                New Button
-            </Button>
+            
         </div>
     );
 }

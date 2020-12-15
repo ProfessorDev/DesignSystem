@@ -1,13 +1,13 @@
 import React from "react";
 import DropdownList from "./DropdownList";
-import {withKnobs} from '@storybook/addon-knobs/react';
+import {withKnobs} from '@storybook/addon-knobs';
 import DropdownItem from "./DropdownItem";
 import DropdownDivider from "./DropdownDivider";
 import DropdownGroup from "./DropdownGroup";
 import DropdownInfo from "./DropdownInfo";
 
 export default {
-    title: "Design System|Dropdown List",
+    title: 'Design System/Dropdown List',
     decorators: [withKnobs],
     parameters: {
         component: DropdownList,

@@ -11,7 +11,7 @@ import DropdownDivider from "../Dropdown/DropdownDivider";
 import DropdownInfo from "../Dropdown/DropdownInfo";
 
 export default {
-    title: "Design System|TopMenu",
+    title: 'Design System/TopMenu',
     parameters: {
         component: TopMenu,
     }

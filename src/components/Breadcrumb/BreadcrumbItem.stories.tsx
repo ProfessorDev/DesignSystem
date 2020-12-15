@@ -3,7 +3,7 @@ import BreadcrumbItem from "./BreadcrumbItem";
 import {PaddingWrap} from "../utils/PaddingWrap";
 
 export default {
-    title: "Design System|Breadcrumb Item",
+    title: 'Design System/Breadcrumb Item',
     parameters: {
         component: BreadcrumbItem,
     }

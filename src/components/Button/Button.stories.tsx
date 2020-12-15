@@ -1,12 +1,12 @@
 import React from 'react';
 import {action} from '@storybook/addon-actions';
-import {withKnobs, text, select, number, boolean} from '@storybook/addon-knobs/react';
+import {withKnobs, text, select, number, boolean} from '@storybook/addon-knobs';
 import {PaddingWrap} from "../utils/PaddingWrap";
 
 import Button from './Button';
 
 export default {
-    title: 'Design System|Button',
+    title: 'Design System/Button',
     decorators: [withKnobs],
     parameters: {
         component: Button,

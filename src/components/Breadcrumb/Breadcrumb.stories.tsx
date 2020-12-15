@@ -3,7 +3,7 @@ import React from "react";
 import BreadcrumbItem from "./BreadcrumbItem";
 
 export default {
-    title: "Design System|Breadcrumb",
+    title: 'Design System/Breadcrumb',
     parameters: {
         component: Breadcrumb,
     }
