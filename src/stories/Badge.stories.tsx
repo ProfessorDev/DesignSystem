@@ -4,7 +4,7 @@ import React from "react";
 import twx from "tailwindcssx";
 
 export default {
-    title: "Design System/Badge",
+    title: "Design System V2/Badge",
 } as Meta;
 
 const Template: Story<BadgeProps> = (args) => (

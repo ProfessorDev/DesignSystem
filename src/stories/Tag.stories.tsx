@@ -4,7 +4,7 @@ import { Tag, TagProps } from "../components/Tag/Tag";
 import {BrowserRouter as Router} from "react-router-dom";
 
 export default {
-    title: "Design System/Tag",
+    title: "Design System V2/Tag",
     component: Tag,
 } as Meta;
 
