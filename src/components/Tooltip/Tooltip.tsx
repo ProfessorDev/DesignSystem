@@ -1,6 +1,5 @@
 import React from "react";
 import twx from "tailwindcssx";
-import { css } from "emotion";
 
 export interface TooltipProps {
     label: string,
