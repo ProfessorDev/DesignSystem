@@ -40,11 +40,21 @@ module.exports = {
                 scaleY: {
                     '0%': { transform: 'scaleY(0)' },
                     '100%': { transform: 'scaleY(1)' },
+                },
+                background: {
+                    '0%': { 'background-color': 'var(--tw-gradient-from)' },
+                    '100%': { 'background-color': 'var(--tw-gradient-to)' }
+                },
+                border: {
+                    '0%': { 'border-color': 'var(--tw-gradient-from)' },
+                    '100%': { 'border-color': 'var(--tw-gradient-to)' }
                 }
             },
             animation: {
                 scaleX: 'scaleX 1s ease-in-out 1 forwards',
                 scaleY: 'scaleY 1s ease-in-out 1 forwards',
+                background: 'background 300ms ease-in-out 1 forwards',
+                border: 'border 300ms ease-in-out 1 forwards',
             },
         },
     },

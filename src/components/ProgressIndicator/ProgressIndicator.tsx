@@ -1,4 +1,5 @@
-import React from "react";
+import { useEffect } from "react";
+import React, { useState } from "react";
 import twx from "tailwindcssx";
 
 export interface ProgressIndicatorProps {
@@ -18,12 +19,17 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
                 <span
                     className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
                     style={{
-                        animationDelay: `${autoDelay++}s`
+                        animationDelay: `${autoDelay}ms`
                     }}
                 >
 
                 </span>
-                <span className="relative inline-flex rounded-full h-4 w-4 border-4 border-green-600 bg-white"></span>
+                <span
+                    className="animate-border relative inline-flex rounded-full h-4 w-4 border-4 border-gray-600 bg-white from-gray-600 to-green-600"
+                    style={{
+                        animationDelay: `${(() => { let prevAutoDelay = autoDelay; autoDelay += 300; return prevAutoDelay; })()}ms`
+                    }}
+                ></span>
             </span>
         </div>
     );
@@ -46,23 +52,29 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
         </div>
     );
 
-    const CompletedStep = (
-        <div className={twx([
-            // 'border border-red-600',
-            'flex',
-            'items-center',
-        ])}>
+    const CompletedStep = () => {
+        return (
             <div className={twx([
-                'inline-block',
-                'text-green-600',
-                'mx-1',
-                'opacity-50',
-                'text-sm',
+                // 'border border-red-600',
+                'flex',
+                'items-center',
             ])}>
-                <i className="fas fa-check-circle" />
+                <div className={twx([
+                    'inline-block',
+                    'rounded-full',
+                    'bg-gray-600',
+                    'p-1',
+                    'mx-1',
+                    'animate-background',
+                    'from-gray-600 to-green-600',
+                ])} style={{
+                    animationDelay: `${(() => { let prevAutoDelay = autoDelay; autoDelay += 300; return prevAutoDelay; })()}ms`,
+                }}>
+
+                </div>
             </div>
-        </div>
-    );
+        )
+    };
 
     const ActiveLine = () => (
         <div className={twx([
@@ -88,7 +100,7 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
                 ])} style={{
                     width: `100%`,
                     transform: `scaleX(0)`,
-                    animationDelay: `${autoDelay++}s`,
+                    animationDelay: `${(() => { let prevAutoDelay = autoDelay; autoDelay += 1000; return prevAutoDelay; })()}ms`,
                     transformOrigin: 'top left'
                 }}>
 
@@ -135,9 +147,9 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
             'flex',
             'h-10'
         ])}>
-            {CompletedStep}
+            {CompletedStep()}
             {ActiveLine()}
-            {CompletedStep}
+            {CompletedStep()}
             {ActiveLine()}
             {ActiveStep()}
             {InactiveLine}
