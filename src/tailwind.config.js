@@ -1,4 +1,4 @@
-const {colors} = require('tailwindcss/defaultTheme');
+const { colors } = require('tailwindcss/defaultTheme');
 
 const onColors = {
     100: "#000000",
@@ -31,7 +31,21 @@ module.exports = {
                 on_surface: colors.white,
                 on_error: onColors,
                 on_warning: onColors,
-            }
+            },
+            keyframes: {
+                scaleX: {
+                    '0%': { transform: 'scaleX(0)' },
+                    '100%': { transform: 'scaleX(1)' },
+                }, 
+                scaleY: {
+                    '0%': { transform: 'scaleY(0)' },
+                    '100%': { transform: 'scaleY(1)' },
+                }
+            },
+            animation: {
+                scaleX: 'scaleX 1s ease-in-out 1 forwards',
+                scaleY: 'scaleY 1s ease-in-out 1 forwards',
+            },
         },
     },
     variants: {},

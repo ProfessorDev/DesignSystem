@@ -6,15 +6,24 @@ export interface ProgressIndicatorProps {
 }
 
 export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
-    const ActiveStep = (
+    let autoDelay = 0;
+
+    const ActiveStep = () => (
         <div className={twx([
             // 'border border-red-600',
             'flex',
             'items-center',
         ])}>
             <span className="flex relative h-4 w-4 mx-1">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-4 w-4 border-4 border-blue-600 bg-white"></span>
+                <span
+                    className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                    style={{
+                        animationDelay: `${autoDelay++}s`
+                    }}
+                >
+
+                </span>
+                <span className="relative inline-flex rounded-full h-4 w-4 border-4 border-green-600 bg-white"></span>
             </span>
         </div>
     );
@@ -27,7 +36,6 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
         ])}>
             <div className={twx([
                 'inline-block',
-
                 'rounded-full',
                 'bg-gray-600',
                 'p-1',
@@ -46,7 +54,7 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
         ])}>
             <div className={twx([
                 'inline-block',
-                'text-blue-600',
+                'text-green-600',
                 'mx-1',
                 'opacity-50',
                 'text-sm',
@@ -56,7 +64,7 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
         </div>
     );
 
-    const ActiveLine = (
+    const ActiveLine = () => (
         <div className={twx([
             // 'border border-red-600',
             'flex',
@@ -73,12 +81,14 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
                 'align-middle'
             ])}>
                 <div className={twx([
-                    'bg-blue-500',
-                    'transition-all duration-500 ease-in-out',
+                    'bg-green-500',
+                    // 'transition-all duration-500 ease-in-out',
                     'h-full',
+                    'animate-scaleX'
                 ])} style={{
                     width: `100%`,
-                    transform: `scaleX(1)`,
+                    transform: `scaleX(0)`,
+                    animationDelay: `${autoDelay++}s`,
                     transformOrigin: 'top left'
                 }}>
 
@@ -104,7 +114,7 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
                 'align-middle'
             ])}>
                 <div className={twx([
-                    'bg-blue-500',
+                    'bg-green-500',
                     'transition-all duration-500 ease-in-out',
                     'h-full',
                 ])} style={{
@@ -126,10 +136,10 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = () => {
             'h-10'
         ])}>
             {CompletedStep}
-            {ActiveLine}
-            {ActiveStep}
-            {InactiveLine}
-            {InactiveStep}
+            {ActiveLine()}
+            {CompletedStep}
+            {ActiveLine()}
+            {ActiveStep()}
             {InactiveLine}
             {InactiveStep}
             {InactiveLine}
