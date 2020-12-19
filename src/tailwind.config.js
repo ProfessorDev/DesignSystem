@@ -36,7 +36,7 @@ module.exports = {
                 scaleX: {
                     '0%': { transform: 'scaleX(0)' },
                     '100%': { transform: 'scaleX(1)' },
-                }, 
+                },
                 scaleY: {
                     '0%': { transform: 'scaleY(0)' },
                     '100%': { transform: 'scaleY(1)' },
@@ -48,6 +48,10 @@ module.exports = {
                 border: {
                     '0%': { 'border-color': 'var(--tw-gradient-from)' },
                     '100%': { 'border-color': 'var(--tw-gradient-to)' }
+                },
+                ping: {
+                    '0%': { 'transform': 'scale(1)', 'opacity': '1' },
+                    '75%, 100%': { 'transform': 'scale(2)', 'opacity': '0' },
                 }
             },
             animation: {
