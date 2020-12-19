@@ -62,6 +62,8 @@ module.exports = {
             },
         },
     },
-    variants: {},
+    variants: {
+        borderColor: ['responsive', 'dark', 'group-hover', 'hover', 'focus-within', 'focus'],
+    },
     plugins: [],
 };
