@@ -2,15 +2,21 @@ import React, { useRef, useState } from "react";
 import twx from "tailwindcssx";
 import { useFocus } from "@react-aria/interactions";
 import { useTextField, AriaTextFieldOptions } from '@react-aria/textfield';
+import { useEffect } from "@storybook/addons";
 
 
 export const TextFieldBold: React.FC<AriaTextFieldOptions> = (props) => {
     let { label, onChange, value } = props;
-    const [inputFocus, setInputFocus] = useState(false);
+    
     const [input, setInput] = useState(value || "");
+    useEffect(() => {
+        setInput(value || "");
+    }, [value]);
+
     const inputRef = useRef(null);
     let { labelProps, inputProps } = useTextField(props, inputRef);
 
+    const [inputFocus, setInputFocus] = useState(false);
     let { focusProps } = useFocus({
         onFocusChange: (isFocused) =>
             setInputFocus(isFocused),
