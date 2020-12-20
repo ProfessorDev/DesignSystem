@@ -4,7 +4,7 @@ import { useFocus } from "@react-aria/interactions";
 import { useTextField, AriaTextFieldOptions } from '@react-aria/textfield';
 
 
-export const Input: React.FC<AriaTextFieldOptions> = (props) => {
+export const TextFieldBold: React.FC<AriaTextFieldOptions> = (props) => {
     let { label, onChange, value } = props;
     const [inputFocus, setInputFocus] = useState(false);
     const [input, setInput] = useState(value || "");
