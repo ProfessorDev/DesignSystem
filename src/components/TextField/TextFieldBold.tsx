@@ -63,7 +63,6 @@ export const Input: React.FC<AriaTextFieldOptions> = (props) => {
                     'outline-none',
                 ])}
                 ref={inputRef}
-                type="text"
                 style={{
                     zIndex: 1,
                 }}

@@ -13,8 +13,8 @@ import DropdownGroup from './components/Dropdown/DropdownGroup';
 import DropdownDivider from './components/Dropdown/DropdownDivider';
 import Breadcrumb from './components/Breadcrumb/Breadcrumb';
 import BreadcrumbItem from './components/Breadcrumb/BreadcrumbItem';
-import Input from "./components/Input/Input";
-import Password from "./components/Input/Password";
+import Input from "./components/TextField/TextFieldBold";
+import Password from "./components/TextField/Password";
 import twClassNames from './utils/tailwind_extensions/twClassNames';
 
 import useEventHandler from "./hooks/useEventHandler";
