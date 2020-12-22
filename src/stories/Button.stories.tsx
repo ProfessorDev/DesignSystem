@@ -63,6 +63,34 @@ export const Example = () => {
                     Hello
                 </Button>
             </div>
+            <div className="space-x-2">
+                <Button variant="callToAction" isDisabled>
+                    Hello
+                </Button>
+                <Button variant="primary" isDisabled>
+                    Hello
+                </Button>
+                <Button variant="secondary" isDisabled>
+                    Hello
+                </Button>
+                <Button variant="negative" isDisabled>
+                    Hello
+                </Button>
+            </div>
+            <div className="space-x-2">
+                <Button variant="callToAction" isQuiet isDisabled>
+                    Hello
+                </Button>
+                <Button variant="primary" isQuiet isDisabled>
+                    Hello
+                </Button>
+                <Button variant="secondary" isQuiet isDisabled>
+                    Hello
+                </Button>
+                <Button variant="negative" isQuiet isDisabled>
+                    Hello
+                </Button>
+            </div>
         </div>
     )
 };

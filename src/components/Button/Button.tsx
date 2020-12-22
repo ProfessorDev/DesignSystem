@@ -14,7 +14,8 @@ export const Button: React.FC<buttonProps> = (props) => {
     const {
         variant = "callToAction",
         icon,
-        isQuiet
+        isQuiet,
+        isDisabled,
     } = props;
 
     let ref = useRef(null!);
@@ -32,6 +33,7 @@ export const Button: React.FC<buttonProps> = (props) => {
                     'py-1 px-4',
                     'font-semibold',
                     'transition-all duration-300',
+                    isDisabled && ["bg-opacity-70", "opacity-70", 'border-opacity-70'],
                     variant === "callToAction" && ["border-blue-600", "bg-blue-600", 'text-white'],
                     !isQuiet && [
                         'border-2',
