@@ -10,7 +10,7 @@ export const Example = () => {
     return (
         <div className="space-y-2">
             <div className="space-x-2">
-                <Switch isSelected={false} label="Label" />
+                <Switch label="Label" />
             </div>
             <div className="space-x-2">
                 <Switch isSelected label="Label" />

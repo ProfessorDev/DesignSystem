@@ -2,7 +2,10 @@ import React, { useRef } from "react";
 import { useToggleState } from '@react-stately/toggle';
 import { useToggleButton } from '@react-aria/button';
 import { ToggleProps } from "@react-types/checkbox";
+import { VisuallyHidden } from '@react-aria/visually-hidden';
 import twx from "tailwindcssx";
+import { useSwitch } from '@react-aria/switch';
+import { useFocusRing } from '@react-aria/focus';
 
 export interface SwitchProps extends ToggleProps {
     label?: string,
@@ -21,22 +24,28 @@ export const Switch: React.FC<SwitchProps> = (props) => {
 
     let ref = useRef(null);
     let state = useToggleState(props);
-    let { buttonProps } = useToggleButton(
-        props,
-        state,
-        ref
-    );
+    // let { buttonProps } = useToggleButton(
+    //     props,
+    //     state,
+    //     ref
+    // );
+    let { inputProps } = useSwitch(props, state, ref);
+    let { isFocusVisible, focusProps } = useFocusRing();
 
     return (
-        <div className={twx([
+        <label className={twx([
             'inline-flex',
             'text-sm',
             isDisabled && ["opacity-30", "text-opacity-30", "border-opacity-30"]
         ])}>
-            <div>
-                <button
-                    {...buttonProps}
-                    ref={ref}
+            <VisuallyHidden>
+                <input {...inputProps} {...focusProps} ref={ref} />
+            </VisuallyHidden>
+            <div className={twx([
+                'flex',
+                isFocusVisible && 'border border-dotted border-gray-900',
+            ])}>
+                <div
                     className={twx([
                         state.isSelected && isEmphasized && "bg-blue-600",
                         state.isSelected && !isEmphasized && "bg-gray-600",
@@ -65,13 +74,13 @@ export const Switch: React.FC<SwitchProps> = (props) => {
                     >
 
                     </span>
-                </button>
+                </div>
             </div>
             <div className={twx([
                 'ml-2',
             ])}>
                 {label}
             </div>
-        </div>
+        </label>
     )
 };
