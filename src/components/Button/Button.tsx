@@ -1,84 +1,87 @@
-import React from "react";
-import classNames from "classnames";
-import * as PropTypes from 'prop-types';
+import React, { useRef } from "react";
+import { useButton } from '@react-aria/button';
+import { AriaButtonProps } from "@react-types/button";
+import twx from "tailwindcssx";
 
-/**
- *- Use an avatar for attributing actions or content to specific users.
- *- The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
- **/
-export default function Button({children, className, theme, ...props}) {
+
+export interface buttonProps extends AriaButtonProps {
+    variant?: "callToAction" | "primary" | "secondary" | "negative",
+    icon?: React.ReactNode,
+    isQuiet?: boolean,
+}
+
+export const Button: React.FC<buttonProps> = (props) => {
     const {
-        color = "primary",
-        colorVariant = 700,
-        buttonStyle = "normal",
-        size = "md",
-        border = "flat",
-        full = false,
-        onlyIcon = false,
-        shadow = true,
-    } = theme;
+        variant = "callToAction",
+        icon,
+        isQuiet
+    } = props;
 
-    className = classNames(
-        className,
-        'border',
-        {[`border-${color}-${colorVariant}`]: buttonStyle === "normal"},
-        {[`bg-${color}-${colorVariant}`]: buttonStyle === "normal"},
-        {[`text-on_${color}-${colorVariant}`]: buttonStyle === "normal"},
-        {[`border-${color}-${colorVariant}`]: buttonStyle === "outline"},
-        {[`text-${color}-${colorVariant}`]: buttonStyle === "outline" || buttonStyle === "text"},
-        {'border-none': buttonStyle === "text"},
-        {'rounded-md': border === "rounded"},
-        {'w-full': full},
-        {'shadow': shadow},
-        {'px-5 py-1': onlyIcon === false},
-        {'px-2 p-1': onlyIcon === true},
-        `text-${size}`,
-        {'shadow': shadow},
-        {'hover:shadow-md focus:shadow-md': shadow},
-        {'hover:bg-gray-100 focus:bg-gray-100': buttonStyle === "outline" || buttonStyle === "text"},
-        'transition-all duration-100'
-    );
+    let ref = useRef(null!);
+    let { buttonProps } = useButton(props, ref);
+    let { children } = props;
 
     return (
         <button
-            {...props}
-            className={className}
+            {...buttonProps}
+            ref={ref}
+            className={twx({
+                '': [
+                    "rounded-full",
+                    'text-sm',
+                    'py-1 px-4',
+                    'font-semibold',
+                    'transition-all duration-300',
+                    variant === "callToAction" && ["border-blue-600", "bg-blue-600", 'text-white'],
+                    !isQuiet && [
+                        'border-2',
+                        variant === "primary" && ["border-gray-600", 'text-gray-600'],
+                        variant === "secondary" && ["border-gray-500", 'text-gray-500'],
+                        variant === "negative" && ["border-red-600", 'text-red-600', 'text-white'],
+                    ],
+                    isQuiet && [
+                        'border-2',
+                        'border-transparent',
+                        variant === "primary" && ['text-gray-600'],
+                        variant === "secondary" && ['text-gray-500'],
+                        variant === "negative" && ['text-red-600', 'text-white'],
+                    ]
+                ],
+                hover: [
+                    variant === "callToAction" && ["bg-blue-700"],
+                    !isQuiet && [
+                        "text-white",
+                        variant === "primary" && ["bg-gray-600"],
+                        variant === "secondary" && ["bg-gray-500"],
+                        variant === "negative" && ["bg-red-600"],
+                    ],
+                    isQuiet && [
+                        (variant === "primary" || variant === "secondary" || variant === "negative" ) && ["bg-gray-200"],
+                    ]
+                ],
+                focus: [
+                    variant === "callToAction" && ["bg-blue-700"],
+                    !isQuiet && [
+                        "text-white",
+                        variant === "primary" && ["bg-gray-600"],
+                        variant === "secondary" && ["bg-gray-500"],
+                        variant === "negative" && ["bg-red-600"],
+                    ],
+                    isQuiet && [
+                        (variant === "primary" || variant === "secondary" || variant === "negative" ) && ["bg-gray-200"],
+                    ]
+                ]
+            })}
         >
+            {
+                icon &&
+                <span className={twx([
+                    'mr-2',
+                ])}>
+                    {icon}
+                </span>
+            }
             {children}
         </button>
     );
-}
-
-Button.propTypes = {
-    /**
-     * Here the documentation goes of each prop
-     */
-    children: PropTypes.any,
-    /**
-     * Set the theme of the Button using this prop
-     */
-    theme: PropTypes.shape({
-        color: PropTypes.oneOf(["primary", "secondary", "neutral", "error", "warning"]),
-        colorVariant: PropTypes.oneOf([100, 200, 300, 400, 500, 600, 700, 800, 900]),
-        buttonStyle: PropTypes.oneOf(["normal", "outline", "text"]),
-        size: PropTypes.oneOf(["xs", "sm", "md", "lg"]),
-        border: PropTypes.oneOf(["flat", "rounded"]),
-        full: PropTypes.bool,
-        onlyIcon: PropTypes.bool,
-        shadow: PropTypes.bool,
-    })
-};
-
-Button.defaultProps = {
-    children: "Button",
-    theme: {
-        color: "primary",
-        colorVariant: 900,
-        buttonStyle: "normal",
-        size: "md",
-        border: "flat",
-        full: false,
-        onlyIcon: false,
-        shadow: true,
-    }
 };
