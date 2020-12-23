@@ -6,8 +6,13 @@ export interface AlertBannerProps {
     variant: "neutral" | "informative" | "negative",
     actionLabel?: string,
     isDismissible?: boolean,
+    onActionClick?: (e: React.SyntheticEvent) => void,
+    onDismiss?: (e: React.SyntheticEvent) => void,
 }
-export const AlertBanner: React.FC<AlertBannerProps> = ({ text, variant, actionLabel, isDismissible = false }) => {
+export const AlertBanner: React.FC<AlertBannerProps> = ({ 
+    text, variant = "informative", actionLabel, isDismissible = false,
+    onActionClick, onDismiss,
+}) => {
     return (
         <div className={twx([
             'p-0.5',
@@ -53,7 +58,7 @@ export const AlertBanner: React.FC<AlertBannerProps> = ({ text, variant, actionL
                                 'bg-gray-900',
                                 'bg-opacity-25',
                             ]
-                        })}>
+                        })} onClick={onActionClick}>
                             {actionLabel}
                         </button>
                     </div>
@@ -74,7 +79,7 @@ export const AlertBanner: React.FC<AlertBannerProps> = ({ text, variant, actionL
                                     'bg-gray-900',
                                     'bg-opacity-25',
                                 ]
-                            })}>
+                            })} onClick={onDismiss}>
                                 &times;
                             </button>
                         </div>
