@@ -1,11 +1,10 @@
 import React from "react";
 import { Meta } from "@storybook/react";
-import { Files } from "../components/Files/Files";
 import { File } from "../components/Files/File";
 
 export default {
     title: "Design System V2/Files",
-    component: Files,
+    component: File,
 } as Meta;
 
 export const Example = () => {
