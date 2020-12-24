@@ -3,11 +3,12 @@ import twx from "tailwindcssx";
 
 export interface PercentageBarProps {
     variant?: "positive" | "negative" | "notice",
-    current: number,
+    current?: number,
     total?: number,
+    isIndeterminate?: boolean,
 }
 
-export const PercentageBar: React.FC<PercentageBarProps> = ({ variant = "positive", total = 100, current }) => {
+export const PercentageBar: React.FC<PercentageBarProps> = ({ variant = "positive", total = 100, current = 50, isIndeterminate}) => {
     const widthFraction =
         current > total ? (
             1
@@ -29,6 +30,7 @@ export const PercentageBar: React.FC<PercentageBarProps> = ({ variant = "positiv
                 variant === "notice" && "bg-yellow-600",
                 'transition-all duration-500 ease-in-out',
                 'h-full',
+                isIndeterminate && "animate-barLoading"
             ])} style={{
                 width: `100%`,
                 transform: `scaleX(${widthFraction})`,

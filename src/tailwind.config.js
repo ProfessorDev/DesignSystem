@@ -52,6 +52,15 @@ module.exports = {
                 ping: {
                     '0%': { 'transform': 'scale(1)', 'opacity': '1' },
                     '75%, 100%': { 'transform': 'scale(2)', 'opacity': '0' },
+                },
+                circleLoading: {
+                    "0%": { transform: 'rotate(0deg)' },
+                    "100%": { transform: 'rotate(360deg)' },
+                },
+                barLoading: {
+                    "0%": { transform: 'scaleX(0)'},
+                    "25%": { transform: 'scaleX(1)'},
+                    "75%, 100%": { transform: 'scaleX(0)', transformOrigin: "top right"},
                 }
             },
             animation: {
@@ -59,6 +68,8 @@ module.exports = {
                 scaleY: 'scaleY 1s ease-in-out 1 forwards',
                 background: 'background 300ms ease-in-out 1 forwards',
                 border: 'border 300ms ease-in-out 1 forwards',
+                circleLoading: 'circleLoading 500ms ease-in-out infinite forwards',
+                barLoading: 'barLoading 2000ms ease-in-out infinite forwards',
             },
         },
     },

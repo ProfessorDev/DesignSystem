@@ -3,11 +3,17 @@ import twx from "tailwindcssx";
 
 export interface PercentageCircleProps {
     variant?: "positive" | "negative" | "notice",
-    current: number,
+    isIndeterminate?: boolean,
+    current?: number,
     total?: number,
+    flip?: boolean,
 }
 
-export const PercentageCircle: React.FC<PercentageCircleProps> = ({ variant = "positive", current, total = 100 }) => {
+export const PercentageCircle: React.FC<PercentageCircleProps> = ({ 
+    variant = "positive", current = 0, total = 100,
+    isIndeterminate = false,
+}) => {
+    current = isIndeterminate ? 50 : current;
     const percent =
         current > total ? (
             1
@@ -25,8 +31,6 @@ export const PercentageCircle: React.FC<PercentageCircleProps> = ({ variant = "p
         <svg
             className={twx([
                 'inline-block',
-                'transition-all duration-500 ease-in-out',
-                'stroke-current',
                 variant === "positive" && "text-green-600",
                 variant === "negative" && "text-red-600",
                 variant === "notice" && "text-yellow-600",
@@ -38,8 +42,21 @@ export const PercentageCircle: React.FC<PercentageCircleProps> = ({ variant = "p
             height={radius * 2}
         >
             <circle
+                className="text-gray-300 stroke-current opacity-50"
+                strokeWidth={stroke}
+                fill="transparent"
+                r={normalizedRadius}
+                cx={radius}
+                cy={radius}
+            />
+            <circle
+                className={twx([
+                    "stroke-current transition-all duration-500 ease-in-out",
+                    isIndeterminate && 'animate-circleLoading',
+                ])}
                 style={{
                     transition: "stroke-dashoffset 0.35s",
+                    transformOrigin: "center center",
                 }}
                 strokeWidth={stroke}
                 fill="transparent"
