@@ -4,7 +4,8 @@ import { RadioGroup } from "../components/Radio/RadioGroup";
 import { Radio } from "../components/Radio/Radio";
 
 export default {
-    title: "Design System V2/Radio"
+    title: "Design System V2/Radio",
+    component: RadioGroup,
 } as Meta;
 
 export const Example = () => {

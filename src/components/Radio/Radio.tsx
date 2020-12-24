@@ -50,6 +50,21 @@ export const Radio: React.FC<RadioProps> = (props) => {
                 // 'border border-green-900'
             ])}>
                 <div className={twx([
+                    'rounded-sm',
+                    'absolute',
+                    '-inset-1.5',
+                    'border-2',
+                    'rounded-full',
+                    !isFocusVisible && 'border-transparent',
+                    isFocusVisible && [
+                        isEmphasized && "border-blue-600",
+                        !isEmphasized && "border-gray-600",
+                        isError && "border-red-600",
+                    ],
+                ])}>
+
+                </div>
+                <div className={twx([
                     'absolute',
                     'inset-0',
                     'bg-white',
