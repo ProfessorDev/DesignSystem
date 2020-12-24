@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { ToggleProps } from "@react-types/checkbox";
 import { useToggleState } from '@react-stately/toggle';
 import { useCheckbox } from '@react-aria/checkbox';
@@ -15,6 +15,8 @@ export interface CheckboxProps extends ToggleProps {
 
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
     let { children, isIndeterminate, isEmphasized, isDisabled, isError } = props;
+
+
     let state = useToggleState(props);
     let ref = useRef(null);
     let { inputProps } = useCheckbox(props, state, ref);
@@ -51,6 +53,20 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
                 'relative',
                 // 'border border-green-900'
             ])}>
+                <div className={twx([
+                    'rounded-sm',
+                    'absolute',
+                    '-inset-1.5',
+                    'border-2',
+                    !isFocusVisible && 'border-transparent',
+                    isFocusVisible && [
+                        isEmphasized && "border-blue-600",
+                        !isEmphasized && "border-gray-600",
+                        isError && "border-red-600",
+                    ],
+                ])}>
+
+                </div>
                 <div className={twx([
                     'absolute',
                     'inset-0',

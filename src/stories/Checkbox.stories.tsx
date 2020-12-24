@@ -4,6 +4,7 @@ import { Checkbox } from "../components/Checkbox/Checkbox";
 
 export default {
     title: "Design System V2/Checkbox",
+    component: Checkbox,
 } as Meta;
 
 export const Example = () => {
