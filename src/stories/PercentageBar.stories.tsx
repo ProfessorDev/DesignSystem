@@ -32,6 +32,9 @@ export const Example = () => {
             <div>
                 <PercentageBar variant="notice" current={100} />
             </div>
+            <div>
+                <PercentageBar isIndeterminate />
+            </div>
             <div className="space-x-2">
                 <button onClick={() => setNumber(number + by)}>
                     Increase by {by}

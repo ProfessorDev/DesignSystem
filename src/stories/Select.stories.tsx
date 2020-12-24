@@ -4,7 +4,8 @@ import { Select } from "../components/Select/Select";
 import { Item } from '@react-stately/collections';
 
 export default {
-    title: "Design System V2/Select"
+    title: "Design System V2/Select",
+    component: Select,
 } as Meta;
 
 export const Example = () => {

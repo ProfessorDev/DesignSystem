@@ -4,6 +4,7 @@ import { FileSelector } from "../components/FileSelector/FileSelector";
 
 export default {
     title: "Design System V2/FileSelector",
+    component: FileSelector,
 } as Meta;
 
 export const Example = () => {

@@ -4,13 +4,16 @@ import { Button } from "../components/Button/Button";
 
 export default {
     title: "Design System V2/Button",
+    component: Button,
 } as Meta;
 
 export const Example = () => {
     return (
         <div className="space-y-2">
             <div className="space-x-2">
-                <Button variant="callToAction">
+                <Button variant="callToAction" onPress={() => {
+                    console.log("Button Pressed");
+                }}>
                     Hello
                 </Button>
                 <Button variant="primary">

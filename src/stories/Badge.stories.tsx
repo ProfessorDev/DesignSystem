@@ -5,6 +5,7 @@ import twx from "tailwindcssx";
 
 export default {
     title: "Design System V2/Badge",
+    component: Badge,
 } as Meta;
 
 const Template: Story<BadgeProps> = (args) => (

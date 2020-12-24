@@ -4,6 +4,7 @@ import { Switch } from "../components/Switch/Switch";
 
 export default {
     title: "Design System V2/Switch",
+    component: Switch,
 } as Meta;
 
 export const Example = () => {

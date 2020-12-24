@@ -18,6 +18,7 @@ export const Example = () => {
                 <PercentageCircle variant="notice" current={50} />
                 <PercentageCircle variant="positive" current={75} />
                 <PercentageCircle variant="positive" current={100} />
+                <PercentageCircle isIndeterminate/>
             </div>
             <div className="space-x-2">
                 <button onClick={() => setValue(value + 10)}>

@@ -4,6 +4,7 @@ import { SearchField } from "../components/SearchField/SearchField";
 
 export default {
     title: "Design System V2/SearchField",
+    component: SearchField,
 } as Meta;
 
 export const Example = () => {

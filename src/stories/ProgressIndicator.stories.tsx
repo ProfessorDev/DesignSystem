@@ -4,6 +4,7 @@ import { ProgressIndicator } from "../components/ProgressIndicator/ProgressIndic
 
 export default {
     title: "Design System V2/ProgressIndicator",
+    component: ProgressIndicator,
 } as Meta;
 
 export const Example = () => {
