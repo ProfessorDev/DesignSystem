@@ -4,13 +4,13 @@ import { AriaButtonProps } from "@react-types/button";
 import twx from "tailwindcssx";
 
 
-export interface buttonProps extends AriaButtonProps {
+export interface ButtonProps extends AriaButtonProps {
     variant?: "callToAction" | "primary" | "secondary" | "negative",
     icon?: React.ReactNode,
     isQuiet?: boolean,
 }
 
-export const Button: React.FC<buttonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = (props) => {
     const {
         variant = "callToAction",
         icon,
