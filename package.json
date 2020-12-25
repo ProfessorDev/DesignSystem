@@ -26,14 +26,15 @@
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
-    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "build": "cross-env BABEL_ENV=production babel src -d dist --extensions '.tsx,.js'",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch:css": "postcss src/assets/css/*.css --dir src/assets/css/build --watch",
     "build:css": "postcss src/assets/css/*.css --dir src/assets/css/build",
     "storybook": "npm run build:css && start-storybook -p 9009 -s public",
     "build-storybook": "npm run build:css && build-storybook -s public",
-    "release": "auto shipit"
+    "release": "auto shipit",
+    "tsc": "tsc --outDir dist"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,6 +53,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.10.4",
+    "@babel/preset-typescript": "^7.12.7",
     "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-docs": "^6.1.11",
     "@storybook/addon-knobs": "^6.1.11",
@@ -77,7 +79,8 @@
         {
           "absoluteRuntime": false
         }
-      ]
+      ],
+      "@babel/preset-typescript"
     ]
   },
   "description": "This Design System is bootstrapped with [StoryBook](https://storybook.js.org/) and [TailwindCSS](https://tailwindcss.com/).",
