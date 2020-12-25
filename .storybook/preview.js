@@ -39,3 +39,7 @@ const customViewports = {
 addParameters({
     viewport: { viewports: customViewports },
 });
+
+export const parameters = {
+    actions: { argTypesRegex: "^on[A-Z].*" },
+};

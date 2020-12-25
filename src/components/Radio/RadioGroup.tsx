@@ -1,9 +1,8 @@
-import React, { Children, cloneElement, ComponentType, createContext, ReactElement, ReactNode } from "react";
-import { useRadioGroup, useRadio } from '@react-aria/radio'
+import React, { Children, cloneElement, createContext, ReactElement, ReactNode } from "react";
+import { useRadioGroup } from '@react-aria/radio'
 import { useRadioGroupState, RadioGroupState } from '@react-stately/radio';
 import { RadioGroupProps as RadioGroupPropsTypes } from "@react-types/radio";
 import twx from "tailwindcssx";
-import { RadioProps } from "./Radio";
 
 
 export const RadioContext = createContext<RadioGroupState>(null!);
@@ -12,19 +11,20 @@ export interface RadioGroupProps extends RadioGroupPropsTypes {
     isEmphasized?: boolean,
     orientation?: 'vertical' | 'horizontal',
     isError?: boolean,
-    labelPosition?: '' | '',
+    labelPosition?: 'left' | 'top',
     necessityIndicator?: 'icon' | 'text'
 }
 
 export const RadioGroup: React.FC<RadioGroupProps> = (props) => {
-    let { 
-        children, 
-        label, 
-        isEmphasized, 
-        isDisabled, 
-        isReadOnly, 
-        isError, 
-        labelPosition, 
+    let {
+        children,
+        label,
+        isEmphasized,
+        isDisabled,
+        isReadOnly,
+        isError,
+        isRequired,
+        labelPosition = "top",
         necessityIndicator = 'icon',
         orientation = 'vertical',
     } = props;
@@ -41,9 +41,22 @@ export const RadioGroup: React.FC<RadioGroupProps> = (props) => {
             className={twx([
                 'inline-flex',
                 isDisabled && 'opacity-30 border-opacity-30 bg-opacity-30 select-none',
+                labelPosition === "left" && "flex-row",
+                labelPosition === "top" && "flex-col",
             ])}
         >
-            <span {...labelProps}>{label}</span>
+            <span {...labelProps} className={twx([
+                "text-xs",
+                labelPosition === "left" && "mr-2",
+                labelPosition === "top" && "mb-2",
+            ])}>
+                {label}
+                <span className="ml-1">
+                    {necessityIndicator === 'icon' && isRequired && "*"}
+                    {necessityIndicator === 'text' && isRequired && "(required)"}
+                    {necessityIndicator === 'text' && !isRequired && "(optional)"}
+                </span>
+            </span>
             <div className={twx([
                 'flex',
                 orientation === "vertical" && 'flex-col',

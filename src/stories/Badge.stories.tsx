@@ -12,6 +12,29 @@ const Template: Story<BadgeProps> = (args) => (
     <Badge {...args} />
 );
 
+const MultipleTemplate: Story<{ items: Array<BadgeProps> }> = (args) => {
+    return (
+        <>
+            {args.items.map(item => (
+                <div className="space-y-2">
+                    <Badge {...item} />
+                </div>
+            ))}
+        </>
+    )
+}
+
+export const Multiple = MultipleTemplate.bind({});
+Multiple.args = {
+    items: [{
+        content: "Hello World",
+        variant: "error",
+    }, {
+        content: "Hello World 2",
+        variant: "success",
+    }]
+}
+
 export const LeftIcon = Template.bind({});
 LeftIcon.args = {
     content: "Hello World",

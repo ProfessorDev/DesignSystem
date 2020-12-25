@@ -12,13 +12,13 @@ export const Example = () => {
     return (
         <div className="space-y-2">
             <div className="space-x-2">
-                <RadioGroup label="Favorite pet">
+                <RadioGroup label="Favorite pet" isRequired>
                     <Radio value="dogs">Dogs</Radio>
                     <Radio value="cats">Cats</Radio>
                 </RadioGroup>
             </div>
             <div className="space-x-2">
-                <RadioGroup label="Favorite pet" isEmphasized>
+                <RadioGroup label="Favorite pet" isEmphasized labelPosition="left">
                     <Radio value="dogs">Dogs</Radio>
                     <Radio value="cats">Cats</Radio>
                 </RadioGroup>
