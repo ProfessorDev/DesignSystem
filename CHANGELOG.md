@@ -1,3 +1,16 @@
+# v1.0.0-1 (Fri Dec 25 2020)
+
+#### ⚠️ Pushed to `master`
+
+- updates ([@ironmanvim](https://github.com/ironmanvim))
+- updated CHANGELOG.md to correct version 1.0.0-0 ([@ironmanvim](https://github.com/ironmanvim))
+
+#### Authors: 1
+
+- Vishal Chiluveri ([@ironmanvim](https://github.com/ironmanvim))
+
+---
+
 # v1.0.0-0 (Fri Dec 25 2020)
 
 #### 🐛 Bug Fix
