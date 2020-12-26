@@ -1,3 +1,15 @@
+# v1.0.0-2 (Sat Dec 26 2020)
+
+#### ⚠️ Pushed to `master`
+
+- added RadioGroup api ([@ironmanvim](https://github.com/ironmanvim))
+
+#### Authors: 1
+
+- Vishal Chiluveri ([@ironmanvim](https://github.com/ironmanvim))
+
+---
+
 # v1.0.0-1 (Fri Dec 25 2020)
 
 #### ⚠️ Pushed to `master`
