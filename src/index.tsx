@@ -33,6 +33,7 @@ import { PercentageBar } from "./components/PercentageBar/PercentageBar";
 import { PercentageCircle } from "./components/PercentageCircle/PercentageCircle";
 import { ProgressIndicator } from "./components/ProgressIndicator/ProgressIndicator";
 import { Radio } from "./components/Radio/Radio";
+import { RadioGroup } from "./components/Radio/RadioGroup";
 import { SearchField } from "./components/SearchField/SearchField";
 import { Select } from "./components/Select/Select";
 import { Item } from '@react-stately/collections';
@@ -76,6 +77,7 @@ export {
     PercentageCircle,
     ProgressIndicator,
     Radio,
+    RadioGroup,
     SearchField,
     Select,
     Item,
