@@ -42,6 +42,8 @@ import { Switch } from "./components/Switch/Switch";
 import { Tag } from "./components/Tag/Tag";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextField } from "./components/TextField/TextField";
+import { Tabs } from "./components/Tabs/Tabs";
+import { TabsPanel } from "./components/Tabs/TabsPanel";
 
 const hooks = {
     useEventHandler,
@@ -86,4 +88,6 @@ export {
     Tag,
     TextArea,
     TextField,
+    Tabs,
+    TabsPanel,
 }
