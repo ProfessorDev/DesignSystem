@@ -1,3 +1,16 @@
+# v1.0.0-3 (Sun Dec 27 2020)
+
+#### ⚠️ Pushed to `master`
+
+- added Tabs to api (36564980+ironmanvim@users.noreply.github.com)
+- added Tabs component (36564980+ironmanvim@users.noreply.github.com)
+
+#### Authors: 1
+
+- Vishal Chiluveri (36564980+ironmanvim@users.noreply.github.com)
+
+---
+
 # v1.0.0-2 (Sat Dec 26 2020)
 
 #### ⚠️ Pushed to `master`
