@@ -3,18 +3,19 @@ import twx from "tailwindcssx";
 import { TabsContext } from "./Tabs";
 
 export interface TabsPanelProps {
-    label?: string,
+    label: ReactNode,
+    value?: string,
     children: ReactNode,
     isSelected?: boolean,
 }
 
-export const TabsPanel: React.FC<TabsPanelProps> = ({ label = "" }) => {
+export const TabsPanel: React.FC<TabsPanelProps> = ({ label, value = "" }) => {
     const [state, setState] = useContext(TabsContext);
 
     return (
         <button onClick={() => {
             setState({
-                key: label,
+                key: value,
             });
         }} className={twx({
             '': [

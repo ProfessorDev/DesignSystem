@@ -5,7 +5,7 @@ import {TabsPanelProps} from "./TabsPanel";
 
 export interface TabsProps {
     children: Array<ReactElement<TabsPanelProps>>,
-    defaultKey?: string,
+    defaultValue?: string,
 };
 
 interface SelectionState {
@@ -14,16 +14,16 @@ interface SelectionState {
 
 export const TabsContext = createContext<[SelectionState, Dispatch<SetStateAction<SelectionState>>]>(null!);
 
-export const Tabs: React.FC<TabsProps> = ({ children, defaultKey = "" }) => {
+export const Tabs: React.FC<TabsProps> = ({ children, defaultValue = "" }) => {
     const [state, setState] = useState<SelectionState>({
         key: "",
     });
 
     useEffect(() => {
         setState({
-            key: defaultKey,
+            key: defaultValue,
         });
-    }, [defaultKey]);
+    }, [defaultValue]);
 
     return (
         <div>
@@ -39,7 +39,7 @@ export const Tabs: React.FC<TabsProps> = ({ children, defaultKey = "" }) => {
 
             ])}>
                 {Children.map(children, (child) => {
-                    if (child.props.label === state.key) {
+                    if (child.props.value === state.key) {
                         return child.props.children;
                     }
                     return null;
