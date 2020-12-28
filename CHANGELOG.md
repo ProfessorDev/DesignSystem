@@ -1,3 +1,15 @@
+# v1.0.0-4 (Mon Dec 28 2020)
+
+#### ⚠️ Pushed to `master`
+
+- changed Tabs api ([@ironmanvim](https://github.com/ironmanvim))
+
+#### Authors: 1
+
+- Vishal Chiluveri ([@ironmanvim](https://github.com/ironmanvim))
+
+---
+
 # v1.0.0-3 (Sun Dec 27 2020)
 
 #### ⚠️ Pushed to `master`
