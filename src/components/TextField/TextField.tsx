@@ -48,7 +48,7 @@ export const TextField: React.FC<TextFieldProps> = (props) => {
                         'text-xs',
                         'mb-1',
                         'inline-flex',
-                        labelPosition === "side" && "justify-center items-center flex-1 w-32"
+                        labelPosition === "side" && "justify-center items-center"
                     ],
                 })}
             >
@@ -78,7 +78,7 @@ export const TextField: React.FC<TextFieldProps> = (props) => {
                     'items-center',
                     'px-2 py-1',
                     isDisabled && ["bg-gray-300"],
-                    labelPosition === "side" && "ml-1"
+                    labelPosition === "side" && ["ml-1", "flex-1"]
                 ],
                 hover: [
                     !isError && 'border-gray-600',
