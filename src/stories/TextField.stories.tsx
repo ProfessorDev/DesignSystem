@@ -9,7 +9,7 @@ export default {
 export const Example = () => {
     return (
         <div className="space-y-2">
-            <div className="space-x-2">
+            <div className="space-x-2 w-96">
                 <TextField label="Email address" placeholder="wilson@professordev.com" hasCharacterCount />
             </div>
             <div className="space-x-2">

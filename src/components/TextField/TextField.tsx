@@ -38,6 +38,7 @@ export const TextField: React.FC<TextFieldProps> = (props) => {
             labelPosition === "top" && "flex-col",
             labelPosition === "side" && "flex-row items-center",
             // 'border border-red-600',
+            'w-full',
         ])}>
             <label
                 {...labelProps}
@@ -92,6 +93,7 @@ export const TextField: React.FC<TextFieldProps> = (props) => {
                     }}
                     className={twx({
                         '': [
+                            'flex-1',
                             !isQuiet && 'bg-white',
                             !isDisabled && 'placeholder-gray-900',
                             'text-sm',

@@ -26,7 +26,7 @@ export const TextFieldBold: React.FC<AriaTextFieldOptions> = (props) => {
     return (
         <label className={twx({
             '': [
-                'inline-block',
+                'inline-flex',
                 'border border-gray-300',
                 'relative',
                 'group',
@@ -34,6 +34,7 @@ export const TextFieldBold: React.FC<AriaTextFieldOptions> = (props) => {
                 'pt-6',
                 'rounded-lg',
                 'cursor-text',
+                'w-full',
             ],
             hover: [
                 'border-gray-600',
@@ -66,11 +67,9 @@ export const TextFieldBold: React.FC<AriaTextFieldOptions> = (props) => {
                 {...focusProps}
                 className={twx([
                     'outline-none',
+                    'flex-1',
                 ])}
                 ref={inputRef}
-                style={{
-                    zIndex: 1,
-                }}
                 value={input}
                 onChange={(e) => {
                     onChange && onChange(e.target.value);

@@ -12,6 +12,9 @@ export const Example = () => {
             <div className="space-x-2">
                 <TextFieldBold label="placeholder" type="text"/>
             </div>
+            <div className="space-x-2 w-96">
+                <TextFieldBold label="placeholder" type="text"/>
+            </div>
         </div>
     )
 };
