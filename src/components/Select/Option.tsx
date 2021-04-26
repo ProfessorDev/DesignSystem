@@ -61,7 +61,9 @@ export const Option: OptionType = ({ item, state }) => {
             <div className="text-xs text-blue-600">
                 {
                     isSelected &&
-                    <i className="fas fa-check" />
+                    <span>
+                        <i className="fas fa-check" />
+                    </span>
                 }
             </div>
         </li>
