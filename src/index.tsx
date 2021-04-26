@@ -2,25 +2,24 @@
  * Design System V1 Components
  */
 
-import SideNav from './components/SideNav/SideNav';
-import SideNavLabel from './components/SideNav/SideNavLabel';
-import TopMenu from './components/TopMenu/TopMenu';
-import TopMenuItem from './components/TopMenu/TopMenuItem';
-import TopMenuDivider from './components/TopMenu/TopMenuDivider';
-import Dropdown from './components/Dropdown/Dropdown';
-import DropdownList from './components/Dropdown/DropdownList';
-import DropdownButton from './components/Dropdown/DropdownButton';
-import DropdownItem from './components/Dropdown/DropdownItem';
-import DropdownInfo from './components/Dropdown/DropdownInfo';
-import DropdownGroup from './components/Dropdown/DropdownGroup';
-import DropdownDivider from './components/Dropdown/DropdownDivider';
-import Breadcrumb from './components/Breadcrumb/Breadcrumb';
-import BreadcrumbItem from './components/Breadcrumb/BreadcrumbItem';
-import twClassNames from './utils/tailwind_extensions/twClassNames';
+import SideNav from "./components/SideNav/SideNav";
+import SideNavLabel from "./components/SideNav/SideNavLabel";
+import TopMenu from "./components/TopMenu/TopMenu";
+import TopMenuItem from "./components/TopMenu/TopMenuItem";
+import TopMenuDivider from "./components/TopMenu/TopMenuDivider";
+import Dropdown from "./components/Dropdown/Dropdown";
+import DropdownList from "./components/Dropdown/DropdownList";
+import DropdownButton from "./components/Dropdown/DropdownButton";
+import DropdownItem from "./components/Dropdown/DropdownItem";
+import DropdownInfo from "./components/Dropdown/DropdownInfo";
+import DropdownGroup from "./components/Dropdown/DropdownGroup";
+import DropdownDivider from "./components/Dropdown/DropdownDivider";
+import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
+import BreadcrumbItem from "./components/Breadcrumb/BreadcrumbItem";
+import twClassNames from "./utils/tailwind_extensions/twClassNames";
 
 import useEventHandler from "./hooks/useEventHandler";
 import useOutsideClickHandler from "./hooks/useOutsideClickHandler";
-
 
 /**
  * Design System V2 Components
@@ -36,12 +35,13 @@ import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
 import { SearchField } from "./components/SearchField/SearchField";
 import { Select } from "./components/Select/Select";
-import { Item } from '@react-stately/collections';
+import { Item } from "@react-stately/collections";
 import { StatusLight } from "./components/StatusLight/StatusLight";
 import { Switch } from "./components/Switch/Switch";
 import { Tag } from "./components/Tag/Tag";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextField } from "./components/TextField/TextField";
+import { TextFieldBold } from "./components/TextField/TextFieldBold";
 import { Tabs } from "./components/Tabs/Tabs";
 import { TabsPanel } from "./components/Tabs/TabsPanel";
 
@@ -67,7 +67,6 @@ export {
     BreadcrumbItem,
     twClassNames,
     hooks,
-
     /**
      * Design System V2 exports
      */
@@ -88,6 +87,7 @@ export {
     Tag,
     TextArea,
     TextField,
+    TextFieldBold,
     Tabs,
     TabsPanel,
-}
+};

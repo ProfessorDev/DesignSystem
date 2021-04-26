@@ -33,7 +33,8 @@
     "storybook": "npm run build:css && start-storybook -p 9009 -s public",
     "build-storybook": "npm run build:css && build-storybook -s public",
     "release": "auto shipit",
-    "tsc": "tsc --outDir dist"
+    "tsc": "tsc --outDir dist",
+    "prepublish": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
