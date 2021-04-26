@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
-    "build": "cross-env BABEL_ENV=production babel src -d dist --extensions '.tsx,.js'",
+    "build": "cross-env BABEL_ENV=production babel src -d dist --extensions '.tsx,.js' && npm run tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch:css": "postcss src/assets/css/*.css --dir src/assets/css/build --watch",
