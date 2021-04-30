@@ -21,6 +21,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "noImplicitAny": false,
+    "noEmit": true
   },
   "include": [
     "src"
