@@ -50,6 +50,7 @@ export const FileSelector: React.FC<FileSelectorProps> = (props) => {
                 )}
                 <div>
                     <button
+                        type="button"
                         className={twx({
                             "": [
                                 "text-sm",
