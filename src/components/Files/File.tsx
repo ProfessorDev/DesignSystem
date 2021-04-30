@@ -15,6 +15,29 @@ export const types = {
     [x: string]: Array<string>;
 };
 
+type WordFileType = "doc" | "docx" | "word";
+type PDFFileType = "pdf";
+type ExcelFileType = "xls" | "xlsx" | "csv" | "excel";
+type VideoFileType = "mp4" | "avi" | "mkv" | "video";
+type PowerpointFileType = "ppt" | "pptx" | "powerpoint";
+type ImageFileType = "jpg" | "jpeg" | "gif" | "png" | "image";
+type CodeFileType = "html" | "css" | "js" | "code";
+type AudioFileType = "mp3" | "ogg" | "audio";
+type ArchiveFileType = "zip" | "rar" | "archive";
+type UnknownFileType = string;
+
+type FileType =
+    | WordFileType
+    | PDFFileType
+    | ExcelFileType
+    | VideoFileType
+    | PowerpointFileType
+    | ImageFileType
+    | CodeFileType
+    | AudioFileType
+    | ArchiveFileType
+    | UnknownFileType;
+
 export const colors = {
     word: "#295394",
     pdf: "#B60000",
@@ -30,7 +53,7 @@ export const colors = {
     [x: string]: string;
 };
 
-const getIcon = (type: string): React.ReactNode => {
+const getIcon = (type: FileType): React.ReactNode => {
     switch (type) {
         case "word":
             return <i className="fas fa-word" />;
@@ -54,7 +77,7 @@ const getIcon = (type: string): React.ReactNode => {
     return <i className="fas fa-file" />;
 };
 
-const getTypeFromExtension = (extension: string): string => {
+const getTypeFromExtension = (extension: FileType): string => {
     for (let key of Object.keys(types)) {
         if (types[key].includes(extension)) {
             return key;
@@ -70,7 +93,7 @@ export interface FileProps {
     onViewClick?: (e: SyntheticEvent) => void;
     onDownloadClick?: (e: SyntheticEvent) => void;
     onRemoveClick?: (e: SyntheticEvent) => void;
-    extension?: string;
+    extension?: FileType;
     label: string;
 }
 
