@@ -11,6 +11,7 @@ export const Example = () => {
     return (
         <div className="space-y-2">
             <File label="abc.zzz" />
+            <File label="abc.zzzffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd" />
             <File extension="pdf" label="Proposal.pdf" />
         </div>
     )

@@ -2,17 +2,17 @@ import React, { SyntheticEvent } from "react";
 import twx from "tailwindcssx";
 
 export const types = {
-    word: ["doc", "docx"],
+    word: ["doc", "docx", "word"],
     pdf: ["pdf"],
-    excel: ["xls", "xlsx", "csv"],
-    video: ["mp4", "avi", "mkv"],
-    powerpoint: ["ppt", "pptx"],
-    image: ["jpg", "jpeg", "gif"],
-    code: ["html", "css", "js"],
-    audio: ["mp3", "ogg"],
-    archive: ["zip", "rar"],
+    excel: ["xls", "xlsx", "csv", "excel"],
+    video: ["mp4", "avi", "mkv", "video"],
+    powerpoint: ["ppt", "pptx", "powerpoint"],
+    image: ["jpg", "jpeg", "gif", "png", "image"],
+    code: ["html", "css", "js", "code"],
+    audio: ["mp3", "ogg", "audio"],
+    archive: ["zip", "rar", "archive"],
 } as {
-    [x: string]: Array<string>,
+    [x: string]: Array<string>;
 };
 
 export const colors = {
@@ -27,8 +27,8 @@ export const colors = {
     archive: "#463C2C",
     "": "#4B5563",
 } as {
-    [x: string]: string,
-}
+    [x: string]: string;
+};
 
 const getIcon = (type: string): React.ReactNode => {
     switch (type) {
@@ -64,29 +64,34 @@ const getTypeFromExtension = (extension: string): string => {
 };
 
 export interface FileProps {
-    isViewable?: boolean,
-    isDownloadable?: boolean,
-    isRemovable?: boolean,
-    onViewClick?: (e: SyntheticEvent) => void,
-    onDownloadClick?: (e: SyntheticEvent) => void,
-    onRemoveClick?: (e: SyntheticEvent) => void,
-    extension?: string,
-    label: string,
+    isViewable?: boolean;
+    isDownloadable?: boolean;
+    isRemovable?: boolean;
+    onViewClick?: (e: SyntheticEvent) => void;
+    onDownloadClick?: (e: SyntheticEvent) => void;
+    onRemoveClick?: (e: SyntheticEvent) => void;
+    extension?: string;
+    label: string;
 }
 
 export const File: React.FC<FileProps> = ({
-    onViewClick, onDownloadClick, onRemoveClick, label,
-    isViewable = true, isDownloadable = true, isRemovable = true, extension = "",
+    onViewClick,
+    onDownloadClick,
+    onRemoveClick,
+    label,
+    isViewable = true,
+    isDownloadable = true,
+    isRemovable = true,
+    extension = "",
 }) => {
-
     return (
         <div
             className={twx([
                 // "border border-red-600",
-                'px-2 py-0.5',
-                'flex',
-                'items-center',
-                'bg-gray-200',
+                "px-2 py-0.5",
+                "flex",
+                "items-center",
+                "bg-gray-200",
             ])}
         >
             <span
@@ -97,39 +102,25 @@ export const File: React.FC<FileProps> = ({
             >
                 {getIcon(getTypeFromExtension(extension))}
             </span>
-            <span className="text-sm flex-1">
-                {label}
-            </span>
-            {
-                isViewable && (
-                    <button
-                        className="ml-2 text-gray-600"
-                        onClick={onViewClick}
-                    >
-                        <i className="fas fa-eye" />
-                    </button>
-                )
-            }
-            {
-                isDownloadable && (
-                    <button
-                        className="ml-2 text-gray-600"
-                        onClick={onDownloadClick}
-                    >
-                        <i className="fas fa-download" />
-                    </button>
-                )
-            }
-            {
-                isRemovable && (
-                    <button
-                        className="ml-2 text-gray-600"
-                        onClick={onRemoveClick}
-                    >
-                        <i className="fas fa-times" />
-                    </button>
-                )
-            }
+            <span className="text-sm flex-1 truncate">{label}</span>
+            {isViewable && (
+                <button className="ml-2 text-gray-600" onClick={onViewClick}>
+                    <i className="fas fa-eye" />
+                </button>
+            )}
+            {isDownloadable && (
+                <button
+                    className="ml-2 text-gray-600"
+                    onClick={onDownloadClick}
+                >
+                    <i className="fas fa-download" />
+                </button>
+            )}
+            {isRemovable && (
+                <button className="ml-2 text-gray-600" onClick={onRemoveClick}>
+                    <i className="fas fa-times" />
+                </button>
+            )}
         </div>
-    )
-}
+    );
+};
