@@ -4,11 +4,21 @@ import twx from "tailwindcssx";
 
 const SIZE_OF_BLOCK = 3;
 
-export const Pagination = ({ currentPage, numberOfPages, setCurrentPage }) => {
-    const [pageNumber, setPageNumber] = useState(currentPage);
+export interface PaginationProps {
+    currentPage: number;
+    numberOfPages: number;
+    onPageClick: (page: number) => void;
+}
+
+export const Pagination: React.FC<PaginationProps> = ({
+    currentPage,
+    numberOfPages,
+    onPageClick,
+}) => {
+    const [pageNumber, setPageNumber] = useState(String(currentPage));
 
     useEffect(() => {
-        setPageNumber(currentPage);
+        setPageNumber(String(currentPage));
     }, [currentPage]);
 
     let start = currentPage - 1;
@@ -39,10 +49,10 @@ export const Pagination = ({ currentPage, numberOfPages, setCurrentPage }) => {
                     if (e.key === "Enter") {
                         const value = parseInt(pageNumber);
                         if (isNaN(value)) {
-                            setCurrentPage(1);
+                            onPageClick(1);
                         } else {
-                            setCurrentPage(
-                                pageNumber > numberOfPages
+                            onPageClick(
+                                value > numberOfPages
                                     ? numberOfPages
                                     : value < 1
                                     ? 1
@@ -70,7 +80,7 @@ export const Pagination = ({ currentPage, numberOfPages, setCurrentPage }) => {
                         focus: ["bg-gray-200"],
                     })}
                     onClick={() =>
-                        setCurrentPage(
+                        onPageClick(
                             currentPage <= 1 ? currentPage : currentPage - 1
                         )
                     }
@@ -108,7 +118,7 @@ export const Pagination = ({ currentPage, numberOfPages, setCurrentPage }) => {
                                 ],
                             ],
                         })}
-                        onClick={() => setCurrentPage(1)}
+                        onClick={() => onPageClick(1)}
                     >
                         {1}
                     </button>
@@ -158,7 +168,7 @@ export const Pagination = ({ currentPage, numberOfPages, setCurrentPage }) => {
                             ],
                         ],
                     })}
-                    onClick={() => setCurrentPage(pageNumber)}
+                    onClick={() => onPageClick(pageNumber)}
                 >
                     {pageNumber}
                 </button>
@@ -208,7 +218,7 @@ export const Pagination = ({ currentPage, numberOfPages, setCurrentPage }) => {
                                 ],
                             ],
                         })}
-                        onClick={() => setCurrentPage(numberOfPages)}
+                        onClick={() => onPageClick(numberOfPages)}
                     >
                         {numberOfPages}
                     </button>
@@ -231,7 +241,7 @@ export const Pagination = ({ currentPage, numberOfPages, setCurrentPage }) => {
                         focus: ["bg-gray-200"],
                     })}
                     onClick={() =>
-                        setCurrentPage(
+                        onPageClick(
                             currentPage >= numberOfPages
                                 ? currentPage
                                 : currentPage + 1

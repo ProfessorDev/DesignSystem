@@ -15,7 +15,7 @@ const PaginationExample = ({ numberOfPages }) => {
             <Pagination
                 numberOfPages={numberOfPages}
                 currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
+                onPageClick={setCurrentPage}
             />
         </div>
     );
