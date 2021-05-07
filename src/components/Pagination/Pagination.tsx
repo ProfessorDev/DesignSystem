@@ -108,7 +108,14 @@ export const Pagination: React.FC<PaginationProps> = ({
                                     "shadow",
                                 ],
                             ],
-                            hover: ["bg-gray-200"],
+                            hover: [
+                                "bg-gray-200",
+                                currentPage === 1 && [
+                                    "bg-blue-600",
+                                    "text-white",
+                                    "shadow",
+                                ],
+                            ],
                             focus: [
                                 "bg-gray-200",
                                 currentPage === 1 && [
@@ -158,7 +165,14 @@ export const Pagination: React.FC<PaginationProps> = ({
                                 "shadow",
                             ],
                         ],
-                        hover: ["bg-gray-200"],
+                        hover: [
+                            "bg-gray-200",
+                            currentPage === pageNumber && [
+                                "bg-blue-600",
+                                "text-white",
+                                "shadow",
+                            ],
+                        ],
                         focus: [
                             "bg-gray-200",
                             currentPage === pageNumber && [
@@ -208,7 +222,14 @@ export const Pagination: React.FC<PaginationProps> = ({
                                     "shadow",
                                 ],
                             ],
-                            hover: ["bg-gray-200"],
+                            hover: [
+                                "bg-gray-200",
+                                currentPage === numberOfPages && [
+                                    "bg-blue-600",
+                                    "text-white",
+                                    "shadow",
+                                ],
+                            ],
                             focus: [
                                 "bg-gray-200",
                                 currentPage === numberOfPages && [
