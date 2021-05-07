@@ -44,6 +44,7 @@ import { TextField } from "./components/TextField/TextField";
 import { TextFieldBold } from "./components/TextField/TextFieldBold";
 import { Tabs } from "./components/Tabs/Tabs";
 import { TabsPanel } from "./components/Tabs/TabsPanel";
+import { Pagination } from "./components/Pagination/Pagination";
 
 const hooks = {
     useEventHandler,
@@ -90,4 +91,5 @@ export {
     TextFieldBold,
     Tabs,
     TabsPanel,
+    Pagination,
 };
