@@ -93,6 +93,8 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
                     }}
                     className={twx({
                         '': [
+                            'appearance-none',
+                            'border-none',
                             !isQuiet && 'bg-white',
                             !isDisabled && 'placeholder-gray-900',
                             'text-sm',

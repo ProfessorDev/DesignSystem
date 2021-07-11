@@ -93,6 +93,10 @@ export const TextField: React.FC<TextFieldProps> = (props) => {
                     }}
                     className={twx({
                         '': [
+                            'appearance-none',
+                            'border-none',
+                            'outline-none',
+                            'focus:outline-none',
                             'flex-1',
                             !isQuiet && 'bg-white',
                             !isDisabled && 'placeholder-gray-900',
