@@ -45,6 +45,8 @@ import { TextFieldBold } from "./components/TextField/TextFieldBold";
 import { Tabs } from "./components/Tabs/Tabs";
 import { TabsPanel } from "./components/Tabs/TabsPanel";
 import { Pagination } from "./components/Pagination/Pagination";
+import { Toast } from "./components/Toast/Toast";
+import { AlertBanner } from "./components/AlertBanner/AlertBanner";
 
 const hooks = {
     useEventHandler,
@@ -71,6 +73,7 @@ export {
     /**
      * Design System V2 exports
      */
+    AlertBanner,
     Button,
     Checkbox,
     FileSelector,
@@ -89,6 +92,7 @@ export {
     TextArea,
     TextField,
     TextFieldBold,
+    Toast,
     Tabs,
     TabsPanel,
     Pagination,
