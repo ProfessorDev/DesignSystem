@@ -125,7 +125,7 @@ export const File: React.FC<FileProps> = ({
             >
                 {getIcon(getTypeFromExtension(extension))}
             </span>
-            <span className="text-sm flex-1 truncate">{label}</span>
+            <span className="text-sm flex-1 truncate w-0">{label}</span>
             {isViewable && (
                 <button className="ml-2 text-gray-600" onClick={onViewClick}>
                     <i className="fas fa-eye" />
