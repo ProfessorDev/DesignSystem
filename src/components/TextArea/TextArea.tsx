@@ -39,6 +39,7 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
             labelPosition === "top" && "flex-col",
             labelPosition === "side" && "flex-row items-center",
             // 'border border-red-600',
+            'w-full'
         ])}>
             <label
                 {...labelProps}
@@ -48,7 +49,7 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
                         'text-xs',
                         'mb-1',
                         'inline-flex',
-                        labelPosition === "side" && "justify-center items-center flex-1 w-32"
+                        labelPosition === "side" && "justify-center items-center"
                     ],
                 })}
             >
@@ -78,7 +79,7 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
                     'items-center',
                     'px-2 py-1',
                     isDisabled && ["bg-gray-300"],
-                    labelPosition === "side" && "ml-1"
+                    labelPosition === "side" && "ml-1 flex-1"
                 ],
                 hover: [
                     !isError && 'border-gray-600',
@@ -95,6 +96,9 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
                         '': [
                             'appearance-none',
                             'border-none',
+                            'outline-none',
+                            'focus:outline-none',
+                            'flex-1',
                             !isQuiet && 'bg-white',
                             !isDisabled && 'placeholder-gray-900',
                             'text-sm',
