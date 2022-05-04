@@ -1,6 +1,6 @@
 {
   "name": "professordev-designsystem",
-  "version": "1.0.0-23",
+  "version": "1.0.0-24",
   "private": false,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
