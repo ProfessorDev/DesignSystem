@@ -1,3 +1,4 @@
+import { CheckCircleIcon, ExclamationIcon, InformationCircleIcon, XIcon } from "@heroicons/react/solid";
 import React from "react";
 import twx from "tailwindcssx";
 
@@ -34,18 +35,18 @@ export const Toast: React.FC<ToastProps> = ({
             <div className="flex-1 p-3">
                 {variant === "neutral" && null}
                 {variant === "informative" && (
-                    <span className="mr-3">
-                        <i className="fas fa-info-circle" />
+                    <span className="mr-2">
+                        <InformationCircleIcon className="h-5 w-5 inline" />
                     </span>
                 )}
                 {variant === "positive" && (
-                    <span className="mr-3">
-                        <i className="fas fa-check-circle" />
+                    <span className="mr-2">
+                        <CheckCircleIcon className="h-5 w-5 inline" />
                     </span>
                 )}
                 {variant === "negative" && (
-                    <span className="mr-3">
-                        <i className="fas fa-exclamation-triangle" />
+                    <span className="mr-2">
+                        <ExclamationIcon className="h-5 w-5 inline" />
                     </span>
                 )}
                 {text}
@@ -70,14 +71,14 @@ export const Toast: React.FC<ToastProps> = ({
                 <button
                     className={twx({
                         "": [
-                            "inline-block py-1 px-3 font-semibold text-xl rounded",
+                            "inline-block py-1 px-2 font-semibold text-xl rounded",
                             "transition-all duration-25",
                         ],
                         hover: ["bg-gray-900", "bg-opacity-25"],
                     })}
                     onClick={onDismiss}
                 >
-                    &times;
+                    <XIcon className="h-5 w-5 inline"/>
                 </button>
             </div>
         </div>

@@ -6,6 +6,7 @@ import { HiddenSelect, AriaSelectOptions } from '@react-aria/select';
 import { ListBoxPopup } from "./ListBoxPopup";
 import twx from "tailwindcssx";
 import { Transition } from 'react-transition-group';
+import { ChevronDownIcon } from "@heroicons/react/solid";
 
 export interface SelectProps extends AriaSelectOptions<Array<ReactNode>> {
     name?: string,
@@ -57,7 +58,7 @@ export const Select: React.FC<SelectProps> = (props) => {
                 className={twx([
                     'text-sm',
                     'border border-gray-400',
-                    'px-3 py-1',
+                    'px-2 py-1',
                     'rounded',
                     'flex',
                     'items-center',
@@ -70,7 +71,7 @@ export const Select: React.FC<SelectProps> = (props) => {
                         'flex',
                         'flex-start',
                         'flex-1',
-                        'mr-2',
+                        'mr-1',
                     ])}
                 >
                     {state.selectedItem
@@ -80,7 +81,7 @@ export const Select: React.FC<SelectProps> = (props) => {
                 <span className={twx([
                     'text-xs',
                 ])}>
-                    <i className="fas fa-chevron-down" />
+                    <ChevronDownIcon className="h-5 w-5"/>
                 </span>
             </button>
             <Transition in={state.isOpen} timeout={200}>

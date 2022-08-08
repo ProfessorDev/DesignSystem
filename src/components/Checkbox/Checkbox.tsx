@@ -7,6 +7,7 @@ import { useFocusRing } from "@react-aria/focus";
 import twx from "tailwindcssx";
 import { HTMLAttributes } from "react";
 import { AriaAttributes } from "react";
+import { CheckIcon } from "@heroicons/react/solid";
 
 export interface CheckboxProps extends ToggleProps {
     isIndeterminate?: boolean;
@@ -106,7 +107,7 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
                         "text-white",
                     ])}
                 >
-                    <i className="fas fa-check" />
+                    <CheckIcon className="h-4 w-4 inline-block" />
                 </div>
             </div>
             <span className={twx(["ml-2", isError && "text-red-600"])}>

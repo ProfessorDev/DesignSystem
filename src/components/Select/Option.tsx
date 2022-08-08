@@ -5,6 +5,7 @@ import { mergeProps } from '@react-aria/utils';
 import twx from "tailwindcssx";
 import { SelectState } from '@react-stately/select';
 import {Node} from "@react-types/shared"
+import { CheckIcon } from "@heroicons/react/solid";
 
 export interface OptionProps {
     item: Node<React.ReactNode>,
@@ -62,7 +63,7 @@ export const Option: OptionType = ({ item, state }) => {
                 {
                     isSelected &&
                     <span>
-                        <i className="fas fa-check" />
+                        <CheckIcon className="h-6 w-6"/>
                     </span>
                 }
             </div>

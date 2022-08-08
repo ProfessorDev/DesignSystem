@@ -2,6 +2,7 @@ import React from "react";
 import _ from "lodash";
 import { useEffect, useState } from "react";
 import twx from "tailwindcssx";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 
 const SIZE_OF_BLOCK = 3;
 
@@ -71,7 +72,6 @@ export const Pagination: React.FC<PaginationProps> = ({
                             "justify-center",
                             "items-center",
                             "mx-1",
-                            "px-2",
                             "h-7",
                             "bg-gray-100",
                             "cursor-pointer",
@@ -86,7 +86,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                         )
                     }
                 >
-                    <i className="fas fa-chevron-left" />
+                    <ChevronLeftIcon className="h-6 w-6"/>
                 </button>
             )}
             {currentPage > SIZE_OF_BLOCK - 1 &&
@@ -253,7 +253,6 @@ export const Pagination: React.FC<PaginationProps> = ({
                             "justify-center",
                             "items-center",
                             "mx-1",
-                            "px-2",
                             "h-7",
                             "bg-gray-100",
                             "cursor-pointer",
@@ -270,7 +269,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                         )
                     }
                 >
-                    <i className="fas fa-chevron-right" />
+                    <ChevronRightIcon className="h-6 w-6"/>
                 </button>
             )}
         </div>

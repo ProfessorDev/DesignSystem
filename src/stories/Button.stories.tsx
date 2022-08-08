@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta } from "@storybook/react";
 import { Button } from "../components/Button/Button";
+import { ExclamationIcon } from "@heroicons/react/solid";
 
 export default {
     title: "Design System V2/Button",
@@ -29,25 +30,25 @@ export const Example = () => {
             <div className="space-x-2">
                 <Button
                     variant="callToAction"
-                    icon={<i className="fas fa-share-square" />}
+                    icon={<ExclamationIcon className="h-5 w-5 inline-block" />}
                 >
                     Hello
                 </Button>
                 <Button
                     variant="primary"
-                    icon={<i className="fas fa-share-square" />}
+                    icon={<ExclamationIcon className="h-5 w-5 inline-block" />}
                 >
                     Hello
                 </Button>
                 <Button
                     variant="secondary"
-                    icon={<i className="fas fa-share-square" />}
+                    icon={<ExclamationIcon className="h-5 w-5 inline-block" />}
                 >
                     Hello
                 </Button>
                 <Button
                     variant="negative"
-                    icon={<i className="fas fa-share-square" />}
+                    icon={<ExclamationIcon className="h-5 w-5 inline-block" />}
                 >
                     Hello
                 </Button>

@@ -13,7 +13,7 @@ export const Example = () => {
             <div className="space-x-2">
                 <SearchField onSubmit={(inp) => {
                     console.log(inp);
-                }}/>
+                }} />
             </div>
         </div>
     )

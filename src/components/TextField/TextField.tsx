@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTextField, AriaTextFieldOptions } from '@react-aria/textfield';
 import twx from "tailwindcssx";
+import { CheckIcon, ExclamationIcon } from "@heroicons/react/solid";
 
 export interface TextFieldProps extends AriaTextFieldOptions {
     labelPosition?: "top" | "side",
@@ -109,19 +110,19 @@ export const TextField: React.FC<TextFieldProps> = (props) => {
                 {
                     isError &&
                     <div className={twx([
-                        "ml-2",
+                        "ml-1",
                         'text-red-500',
                     ])}>
-                        <i className="fas fa-exclamation-triangle" />
+                        <ExclamationIcon className="h-6 w-6"/>
                     </div>
                 }
                 {
                     showValidIcon && !isError &&
                     <div className={twx([
-                        "ml-2",
+                        "ml-1",
                         'text-green-500',
                     ])}>
-                        <i className="fas fa-check" />
+                        <CheckIcon className="h-6 w-6"/>
                     </div>
                 }
             </div>

@@ -2,6 +2,7 @@ import { Meta, Story } from "@storybook/react";
 import { Badge, BadgeProps } from "../components/Badge/Badge";
 import React from "react";
 import twx from "tailwindcssx";
+import { ExclamationIcon } from "@heroicons/react/solid";
 
 export default {
     title: "Design System V2/Badge",
@@ -38,14 +39,14 @@ Multiple.args = {
 export const LeftIcon = Template.bind({});
 LeftIcon.args = {
     content: "Hello World",
-    icon: <i className="fas fa-exclamation-triangle" />,
+    icon: <ExclamationIcon className="h-5 w-5 inline-block" />,
     iconAlignment: "left"
 }
 
 export const RightIcon = Template.bind({});
 RightIcon.args = {
     content: "Hello World",
-    icon: <i className="fas fa-exclamation-triangle" />,
+    icon: <ExclamationIcon className="h-5 w-5 inline-block" />,
     iconAlignment: "right",
     variant: "error",
 }

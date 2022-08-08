@@ -1,3 +1,4 @@
+import { UploadIcon } from "@heroicons/react/outline";
 import React from "react";
 import { DropzoneOptions, useDropzone } from "react-dropzone";
 import twx from "tailwindcssx";
@@ -62,8 +63,8 @@ export const FileSelector: React.FC<FileSelectorProps> = (props) => {
                             hover: ["bg-gray-100"],
                         })}
                     >
-                        <span className="mr-2">
-                            <i className="fas fa-upload" />
+                        <span className="mr-1">
+                            <UploadIcon className="h-5 w-5 inline-block"/>
                         </span>
                         Upload Files
                     </button>

@@ -13,7 +13,6 @@ export const Badge: React.FC<BadgeProps> = ({ content, variant = "neutral", icon
         <span className={twx([
             iconAlignment === "left" && "mr-1",
             iconAlignment === "right" && "ml-1",
-            'align-middle'
         ])}>
             {icon}
         </span>

@@ -13,6 +13,13 @@ export const Example = () => {
             <File label="abc.zzz" />
             <File label="abc.zzzffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd" />
             <File extension="pdf" label="Proposal.pdf" />
+            <File extension="word" label="Proposal.pdf" />
+            <File extension="excel" label="Proposal.pdf" />
+            <File extension="video" label="Proposal.pdf" />
+            <File extension="powerpoint" label="Proposal.pdf" />
+            <File extension="image" label="Proposal.pdf" />
+            <File extension="code" label="Proposal.pdf" />
+            <File extension="archive" label="Proposal.pdf" />
         </div>
     )
 };

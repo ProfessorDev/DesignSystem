@@ -3,6 +3,7 @@ import twx from "tailwindcssx";
 import { useSearchField } from '@react-aria/searchfield';
 import { AriaSearchFieldProps } from "@react-types/searchfield";
 import { useSearchFieldState } from '@react-stately/searchfield';
+import { CheckIcon, ExclamationIcon, SearchIcon } from "@heroicons/react/solid";
 
 export interface SearchFieldProps extends AriaSearchFieldProps {
     labelPosition?: "top" | "side",
@@ -83,9 +84,9 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
                 ],
             })}>
                 <div className={twx([
-                    "mr-2",
+                    "mr-1",
                 ])}>
-                    {icon ? icon : <i className="fas fa-search"/>}
+                    {icon ? icon : <SearchIcon className="h-6 w-6"/>}
                 </div>
                 <input
                     {...inputProps as React.InputHTMLAttributes<HTMLInputElement>}
@@ -102,19 +103,19 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
                 {
                     isError &&
                     <div className={twx([
-                        "ml-2",
+                        "ml-1",
                         'text-red-500',
                     ])}>
-                        <i className="fas fa-exclamation-triangle" />
+                        <ExclamationIcon className="h-6 w-6"/>
                     </div>
                 }
                 {
                     showValidIcon && !isError &&
                     <div className={twx([
-                        "ml-2",
+                        "ml-1",
                         'text-green-500',
                     ])}>
-                        <i className="fas fa-check" />
+                        <CheckIcon className="h-6 w-6"/>
                     </div>
                 }
             </div>

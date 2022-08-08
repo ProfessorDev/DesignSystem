@@ -1,6 +1,7 @@
 import Breadcrumb from "./Breadcrumb";
 import React from "react";
 import BreadcrumbItem from "./BreadcrumbItem";
+import { ChevronLeftIcon } from "@heroicons/react/solid";
 
 export default {
     title: 'Design System/Breadcrumb',
@@ -12,7 +13,7 @@ export default {
 export const Example = () => {
     return (
         <Breadcrumb as={"link"} color={"primary"} divider={(
-            <i className="fas fa-caret-left"/>
+            <ChevronLeftIcon className="h-5 w-5"/>
         )}>
             <BreadcrumbItem color={"primary"}>
                 primary

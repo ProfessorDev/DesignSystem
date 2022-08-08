@@ -30,7 +30,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
                 '': [
                     "rounded-full",
                     'text-sm',
-                    'py-1 px-4',
+                    'py-1 px-3',
                     'font-semibold',
                     'transition-all duration-300',
                     isDisabled && ["bg-opacity-70", "opacity-70", 'border-opacity-70'],
@@ -78,7 +78,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
             {
                 icon &&
                 <span className={twx([
-                    'mr-2',
+                    'mr-1',
                 ])}>
                     {icon}
                 </span>
