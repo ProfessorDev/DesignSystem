@@ -10,7 +10,7 @@
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "prop-types": "latest"
   },
   "scripts": {
@@ -50,11 +50,11 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/client-api": "latest",
     "@storybook/preset-create-react-app": "^3.0.0",
-    "@storybook/react": "^5.3.19",
+    "@storybook/react": "^10.0.7",
     "auto": "^9.43.1",
     "autoprefixer": "^9.8.0",
     "cross-env": "^7.0.2",
-    "postcss-cli": "^7.1.1",
+    "postcss-cli": "^11.0.1",
     "tailwindcss": "^1.4.6"
   },
   "babel": {
